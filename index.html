@@ -320,12 +320,12 @@
         <div class="card form-card" id="anfrage">
           <h3>Projekt anfragen</h3>
           <p>Beschreibe dein Vorhaben kurz. Die ersten Daten helfen bei der passenden Zuordnung.</p>
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="text" placeholder="Telefonnummer" />
-            <input type="email" placeholder="E-Mail-Adresse" />
-            <input type="text" placeholder="Ort / PLZ im Kreis Calw" />
-            <select>
+          <form action="https://formspree.io/f/DEINE_FORM_ID" method="post">
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="text" name="phone" placeholder="Telefonnummer" required />
+            <input type="email" name="email" placeholder="E-Mail-Adresse" required />
+            <input type="text" name="location" placeholder="Ort / PLZ im Kreis Calw" required />
+            <select name="service" required>
               <option>Leistung auswählen</option>
               <option>Carport</option>
               <option>Terrassenüberdachung</option>
@@ -334,7 +334,8 @@
               <option>Holzfassade</option>
               <option>Sonstiges Holzprojekt</option>
             </select>
-            <textarea placeholder="Kurzbeschreibung des Projekts"></textarea>
+            <textarea name="project" placeholder="Kurzbeschreibung des Projekts" required></textarea>
+            <input type="hidden" name="_subject" value="Neue Anfrage über Meisterservice" />
             <button class="btn" type="submit">Anfrage absenden</button>
             <div class="small">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Bearbeitung deiner Anfrage zu.</div>
           </form>
@@ -440,3 +441,4 @@
   </footer>
 </body>
 </html>
+
