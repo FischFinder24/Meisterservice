@@ -9,20 +9,18 @@
     :root {
       --bg: #f6f2ec;
       --surface: #ffffff;
-      --surface-2: #fbf8f4;
       --text: #1f1b17;
       --muted: #6a625a;
       --line: #e7ddd1;
-      --accent: #6f4d34;
-      --accent-dark: #533926;
+      --accent: #7a5434;
+      --accent-dark: #5b3f28;
       --accent-soft: #efe4d8;
       --shadow: 0 14px 36px rgba(31, 27, 23, 0.08);
-      --radius: 20px;
+      --radius: 22px;
       --max: 1160px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -41,13 +39,20 @@
       margin: 0 auto;
     }
 
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(122, 84, 52, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
     header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(246, 242, 236, 0.92);
+      background: rgba(246, 242, 236, 0.94);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(111, 77, 52, 0.08);
+      border-bottom: 1px solid rgba(122, 84, 52, 0.08);
     }
 
     .nav {
@@ -61,18 +66,18 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       min-width: 0;
     }
 
     .brand-logo {
-      width: 52px;
-      height: 52px;
+      width: 62px;
+      height: 62px;
       object-fit: contain;
-      border-radius: 14px;
+      border-radius: 18px;
       background: #fff;
       border: 1px solid var(--line);
-      padding: 6px;
+      padding: 8px;
       box-shadow: var(--shadow);
     }
 
@@ -85,7 +90,6 @@
     .brand-name {
       font-size: 1.25rem;
       font-weight: 800;
-      letter-spacing: 0.2px;
     }
 
     .brand-sub {
@@ -93,19 +97,10 @@
       font-size: 0.9rem;
     }
 
-    .nav-links {
+    .nav-actions {
       display: flex;
       align-items: center;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid rgba(111, 77, 52, 0.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      gap: 12px;
     }
 
     .btn,
@@ -113,12 +108,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       background: var(--accent);
       color: #fff;
       border: none;
       border-radius: 999px;
-      padding: 14px 22px;
+      padding: 14px 24px;
       font-weight: 700;
       cursor: pointer;
       box-shadow: var(--shadow);
@@ -139,34 +133,52 @@
     }
 
     .hero {
-      padding: 70px 0 40px;
+      padding: 64px 0 40px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 28px;
-      align-items: center;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .hero-logo-wrap {
+      min-height: 320px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .hero-logo {
+      width: 340px;
+      height: 340px;
+      object-fit: contain;
+      border-radius: 34px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 24px;
+      box-shadow: var(--shadow);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
       background: var(--accent-soft);
       color: var(--accent-dark);
-      padding: 9px 14px;
+      padding: 10px 16px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       margin-bottom: 18px;
     }
 
     h1 {
       margin: 0 0 16px;
-      font-size: clamp(2.35rem, 4vw, 4.4rem);
+      font-size: clamp(2.55rem, 4.6vw, 5rem);
       line-height: 1.03;
-      letter-spacing: -1.2px;
+      letter-spacing: -1.3px;
     }
 
     .lead {
@@ -180,50 +192,11 @@
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 26px;
-    }
-
-    .hero-points {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      padding: 0;
-      list-style: none;
-      margin: 0;
-    }
-
-    .hero-logo {
-      width: 240px;
-      height: 240px;
-      object-fit: contain;
-      border-radius: 28px;
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
     }
 
     .hero-side {
       display: grid;
-      gap: 16px;
-    }
-
-    .visual-card {
-      padding: 28px;
-      background: linear-gradient(180deg, #fff, var(--surface-2));
-    }
-
-    .icon-box {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 1.4rem;
-      margin-bottom: 14px;
+      align-content: start;
     }
 
     .form-card {
@@ -243,7 +216,7 @@
 
     form {
       display: grid;
-      gap: 12px;
+      gap: 14px;
     }
 
     input,
@@ -253,9 +226,9 @@
       font: inherit;
       color: var(--text);
       border: 1px solid #d9cfc2;
-      border-radius: 14px;
+      border-radius: 16px;
       background: #fff;
-      padding: 14px 14px;
+      padding: 15px 16px;
       outline: none;
     }
 
@@ -263,18 +236,18 @@
     select:focus,
     textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(111, 77, 52, 0.10);
+      box-shadow: 0 0 0 3px rgba(122, 84, 52, 0.10);
     }
 
     textarea {
-      min-height: 128px;
+      min-height: 140px;
       resize: vertical;
     }
 
     .small {
       color: var(--muted);
-      font-size: 0.82rem;
-      margin-top: 4px;
+      font-size: 0.84rem;
+      margin-top: 2px;
     }
 
     section {
@@ -282,13 +255,13 @@
     }
 
     .section-head {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .section-head h2 {
       margin: 0 0 8px;
       font-size: 2rem;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.4px;
     }
 
     .section-head p {
@@ -300,52 +273,43 @@
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 22px;
     }
 
     .info-card,
-    .step,
     .service,
-    .trust-card {
-      padding: 22px;
+    .step {
+      padding: 26px;
+      min-height: 220px;
     }
 
-    .label {
-      display: inline-block;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 0.82rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
+    .icon-circle,
     .step-number {
-      width: 40px;
-      height: 40px;
+      width: 52px;
+      height: 52px;
       display: grid;
       place-items: center;
       border-radius: 50%;
       background: var(--accent-soft);
       color: var(--accent-dark);
       font-weight: 800;
-      margin-bottom: 14px;
+      font-size: 1.35rem;
+      margin-bottom: 18px;
     }
 
-    .service ul,
-    .trust-card ul {
-      margin: 12px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
+    .service h3,
+    .info-card h3,
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
     }
 
     .service p,
-    .step p,
     .info-card p,
-    .trust-card p {
+    .step p {
       margin: 0;
       color: var(--muted);
+      font-size: 0.98rem;
     }
 
     .cta {
@@ -384,29 +348,29 @@
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
-        display: none;
-      }
-
-      .hero-points {
-        grid-template-columns: 1fr;
+      .hero-logo-wrap {
+        min-height: 220px;
       }
     }
 
     @media (max-width: 640px) {
       .hero {
-        padding-top: 42px;
+        padding-top: 40px;
       }
 
       .brand-logo {
-        width: 46px;
-        height: 46px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .hero-logo-wrap {
+        min-height: 160px;
       }
 
       .hero-logo {
-        width: 140px;
-        height: 140px;
-        padding: 12px;
+        width: 180px;
+        height: 180px;
+        padding: 14px;
       }
 
       .btn,
@@ -414,8 +378,14 @@
         width: 100%;
       }
 
-      .hero-actions {
+      .hero-actions,
+      .nav-actions {
         flex-direction: column;
+        width: 100%;
+      }
+
+      .nav {
+        align-items: flex-start;
       }
     }
   </style>
@@ -431,9 +401,9 @@
         </div>
       </a>
 
-      <nav class="nav-links">
+      <div class="nav-actions">
         <a href="#anfrage" class="btn">Jetzt anfragen</a>
-      </nav>
+      </div>
     </div>
   </header>
 
@@ -441,7 +411,9 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <img class="hero-logo" src="logo.png" alt="Meisterservice Logo groß" />
+          <div class="hero-logo-wrap">
+            <img class="hero-logo" src="logo.png" alt="Meisterservice Logo groß" />
+          </div>
           <div class="eyebrow">Regional. Einfach. Passend vermittelt.</div>
           <h1>Holzbau rund ums Haus im Kreis Calw – einfach online anfragen</h1>
           <p class="lead">
@@ -492,17 +464,17 @@
 
         <div class="grid-3">
           <div class="card service">
-            <div class="icon-box">🪵</div>
+            <div class="icon-circle">🪵</div>
             <h3>Carports & Überdachungen</h3>
             <p>Carports, Terrassenüberdachungen, Pergolen und ähnliche Außenlösungen aus Holz.</p>
           </div>
           <div class="card service">
-            <div class="icon-box">🛠️</div>
+            <div class="icon-circle">🛠️</div>
             <h3>Zimmerei & Holzbau</h3>
             <p>Individuelle Holzbauarbeiten, Konstruktionen und klassische Zimmereiprojekte.</p>
           </div>
           <div class="card service">
-            <div class="icon-box">🏡</div>
+            <div class="icon-circle">🏡</div>
             <h3>Fassade, Garten & Ausbau</h3>
             <p>Sichtschutz, Fassaden, Gartenhäuser, Balkone, Treppen und weitere Holzarbeiten.</p>
           </div>
@@ -519,17 +491,17 @@
 
         <div class="grid-3">
           <div class="card info-card">
-            <div class="icon-box">📍</div>
+            <div class="icon-circle">📍</div>
             <h3>Regional passend</h3>
             <p>Fokus auf passende Handwerksbetriebe aus dem Kreis Calw und Umgebung.</p>
           </div>
           <div class="card info-card">
-            <div class="icon-box">📋</div>
+            <div class="icon-circle">📋</div>
             <h3>Sauber vorbereitet</h3>
             <p>Die wichtigsten Projektdaten werden direkt strukturiert und verständlich erfasst.</p>
           </div>
           <div class="card info-card">
-            <div class="icon-box">🤝</div>
+            <div class="icon-circle">🤝</div>
             <h3>Weniger Suchaufwand</h3>
             <p>Einfach anfragen statt lange unübersichtlich nach vielen Betrieben zu suchen.</p>
           </div>
