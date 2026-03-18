@@ -4,29 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meisterservice – Holzbau im Kreis Calw</title>
+  <meta name="description" content="Meisterservice vermittelt Anfragen für Holzbau und Holzarbeiten rund ums Haus im Kreis Calw – regional, unverbindlich und einfach online anfragen." />
   <style>
     :root {
-      --bg: #f7f4ef;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #7c5a3a;
-      --accent-dark: #5f4228;
-      --line: #e5ddd2;
-      --shadow: 0 10px 30px rgba(0,0,0,0.08);
-      --radius: 18px;
-      --max: 1120px;
+      --bg: #f6f2ec;
+      --surface: #ffffff;
+      --surface-2: #fbf8f4;
+      --text: #1f1b17;
+      --muted: #6a625a;
+      --line: #e7ddd1;
+      --accent: #6f4d34;
+      --accent-dark: #533926;
+      --accent-soft: #efe4d8;
+      --shadow: 0 14px 36px rgba(31, 27, 23, 0.08);
+      --radius: 20px;
+      --max: 1160px;
     }
 
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
       background: var(--bg);
-      line-height: 1.55;
+      color: var(--text);
+      line-height: 1.6;
     }
 
+    img { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
 
     .container {
@@ -37,106 +44,225 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(247, 244, 239, 0.92);
+      z-index: 50;
+      background: rgba(246, 242, 236, 0.92);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(124, 90, 58, 0.08);
+      border-bottom: 1px solid rgba(111, 77, 52, 0.08);
     }
 
     .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 20px;
       padding: 16px 0;
     }
 
     .brand {
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-    }
-
-    .brand span { color: var(--accent); }
-
-    .nav-links {
       display: flex;
-      gap: 22px;
       align-items: center;
-      color: var(--muted);
-      font-size: 0.95rem;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 6px;
       box-shadow: var(--shadow);
     }
 
-    .btn:hover { background: var(--accent-dark); }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .btn,
+    button.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .btn:hover,
+    button.btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
 
     .hero {
-      padding: 72px 0 40px;
+      padding: 70px 0 40px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 28px;
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #efe5d8;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-soft);
       color: var(--accent-dark);
+      padding: 9px 14px;
+      border-radius: 999px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 4vw, 4.3rem);
-      line-height: 1.05;
-      margin: 0 0 18px;
-      letter-spacing: -1px;
+      margin: 0 0 16px;
+      font-size: clamp(2.35rem, 4vw, 4.4rem);
+      line-height: 1.03;
+      letter-spacing: -1.2px;
     }
 
-    .hero p {
+    .lead {
       font-size: 1.08rem;
       color: var(--muted);
-      max-width: 680px;
-      margin: 0 0 26px;
+      max-width: 720px;
+      margin: 0 0 24px;
     }
 
-    .hero-points {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin: 0 0 28px;
+      margin-bottom: 26px;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
       padding: 0;
       list-style: none;
+      margin: 0;
+    }
+
+    .hero-points li,
+    .mini-card,
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(111, 77, 52, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .hero-points li {
-      background: white;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 10px 14px;
-      color: #374151;
+      padding: 14px 16px;
+      color: #2e2924;
       font-size: 0.95rem;
     }
 
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(124, 90, 58, 0.08);
+    .hero-points strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.98rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .visual-card {
+      padding: 28px;
+      background: linear-gradient(180deg, #fff, var(--surface-2));
+    }
+
+    .visual-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .visual-logo {
+      width: 84px;
+      height: 84px;
+      object-fit: contain;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 8px;
+    }
+
+    .visual-top h2 {
+      margin: 0 0 6px;
+      font-size: 1.55rem;
+    }
+
+    .visual-top p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .checklist {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .checklist li {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .checklist strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.97rem;
     }
 
     .form-card {
@@ -145,7 +271,7 @@
 
     .form-card h3 {
       margin: 0 0 8px;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
     }
 
     .form-card p {
@@ -159,21 +285,35 @@
       gap: 12px;
     }
 
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       width: 100%;
-      border: 1px solid #d8d0c6;
-      border-radius: 12px;
-      padding: 14px 14px;
       font: inherit;
+      color: var(--text);
+      border: 1px solid #d9cfc2;
+      border-radius: 14px;
       background: #fff;
+      padding: 14px 14px;
+      outline: none;
     }
 
-    textarea { min-height: 120px; resize: vertical; }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(111, 77, 52, 0.10);
+    }
+
+    textarea {
+      min-height: 128px;
+      resize: vertical;
+    }
 
     .small {
       color: var(--muted);
       font-size: 0.82rem;
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
     section {
@@ -181,100 +321,105 @@
     }
 
     .section-head {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .section-head h2 {
-      font-size: 2rem;
       margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: -0.5px;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 700px;
+      max-width: 760px;
     }
 
-    .services {
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .service {
+    .info-card,
+    .step,
+    .service,
+    .trust-card {
       padding: 22px;
     }
 
-    .service h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-    }
-
-    .service p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .step {
-      padding: 22px;
+    .label {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
 
     .step-number {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: inline-grid;
+      width: 40px;
+      height: 40px;
+      display: grid;
       place-items: center;
-      background: #efe5d8;
+      border-radius: 50%;
+      background: var(--accent-soft);
       color: var(--accent-dark);
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 14px;
     }
 
-    .trust {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .service ul,
+    .trust-card ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
     }
 
-    .trust .card {
-      padding: 22px;
+    .service p,
+    .step p,
+    .info-card p,
+    .trust-card p {
+      margin: 0;
+      color: var(--muted);
     }
 
     .cta {
-      padding: 24px;
+      padding: 28px;
       display: flex;
       justify-content: space-between;
       gap: 18px;
       align-items: center;
       flex-wrap: wrap;
+      background: linear-gradient(135deg, #fff, #f8f3ed);
     }
 
     footer {
-      padding: 24px 0 40px;
+      padding: 28px 0 40px;
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.93rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
 
     .footer-links {
       display: flex;
       gap: 18px;
       flex-wrap: wrap;
-      margin-top: 10px;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
       .hero-grid,
-      .services,
-      .steps,
-      .trust {
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
@@ -282,8 +427,33 @@
         display: none;
       }
 
+      .hero-points {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
       .hero {
-        padding-top: 44px;
+        padding-top: 42px;
+      }
+
+      .brand-logo {
+        width: 46px;
+        height: 46px;
+      }
+
+      .visual-logo {
+        width: 72px;
+        height: 72px;
+      }
+
+      .btn,
+      button.btn {
+        width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
       }
     }
   </style>
@@ -291,54 +461,132 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand">Meister<span>service</span></div>
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="logo.png" alt="Meisterservice Logo" />
+        <div class="brand-text">
+          <span class="brand-name">Meisterservice</span>
+          <span class="brand-sub">Holzbau im Kreis Calw</span>
+        </div>
+      </a>
+
       <nav class="nav-links">
         <a href="#leistungen">Leistungen</a>
+        <a href="#vorteile">Vorteile</a>
         <a href="#ablauf">Ablauf</a>
-        <a href="#anfrage">Anfrage</a>
+        <a href="#anfrage" class="btn">Jetzt anfragen</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Holzbau rund ums Haus im Kreis Calw</div>
-          <h1>Passende Fachbetriebe für Holzarbeiten einfach anfragen</h1>
-          <p>
-            Meisterservice vermittelt Anfragen für Projekte rund um Holzbau und Außenbereiche im Kreis Calw – von Carports über Terrassenüberdachungen bis zu Zimmerei und weiteren Holzarbeiten.
+          <div class="eyebrow">Regional. Einfach. Passend vermittelt.</div>
+          <h1>Holzbau rund ums Haus im Kreis Calw – einfach online anfragen</h1>
+          <p class="lead">
+            Meisterservice unterstützt bei der Anfrage für Holzprojekte rund ums Haus und bringt Interessenten mit passenden regionalen Handwerksbetrieben zusammen – von der ersten Anfrage bis zur strukturierten Weitergabe an geeignete Fachbetriebe.
           </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#anfrage">Projekt anfragen</a>
+            <a class="btn secondary" href="#ablauf">So funktioniert es</a>
+          </div>
+
           <ul class="hero-points">
-            <li>Regional im Kreis Calw</li>
-            <li>Unverbindliche Anfrage</li>
-            <li>Für private Projekte rund ums Haus</li>
+            <li>
+              <strong>Regionale Fachbetriebe</strong>
+              Fokus auf passende Handwerksbetriebe aus dem Kreis Calw und Umgebung.
+            </li>
+            <li>
+              <strong>Weniger Aufwand für dich</strong>
+              Die wichtigsten Projektdaten werden direkt sauber erfasst und vorsortiert.
+            </li>
+            <li>
+              <strong>Klare Projektanfragen</strong>
+              Statt unklarer Telefonate startet alles mit einer strukturierten Online-Anfrage.
+            </li>
+            <li>
+              <strong>Einfacher Start</strong>
+              Unverbindlich anfragen und den ersten Schritt für dein Holzprojekt machen.
+            </li>
           </ul>
-          <a class="btn" href="#anfrage">Jetzt Anfrage starten</a>
         </div>
 
-        <div class="card form-card" id="anfrage">
-          <h3>Projekt anfragen</h3>
-          <p>Beschreibe dein Vorhaben kurz. Die ersten Daten helfen bei der passenden Zuordnung.</p>
-          <form action="https://formspree.io/f/meerkaoq" method="post">
-            <input type="text" name="name" placeholder="Name" required />
-            <input type="text" name="phone" placeholder="Telefonnummer" required />
-            <input type="email" name="email" placeholder="E-Mail-Adresse" required />
-            <input type="text" name="location" placeholder="Ort / PLZ im Kreis Calw" required />
-            <select name="service" required>
-              <option>Leistung auswählen</option>
-              <option>Carport</option>
-              <option>Terrassenüberdachung</option>
-              <option>Zimmerei / Holzbau</option>
-              <option>Gartenhaus / Sichtschutz</option>
-              <option>Holzfassade</option>
-              <option>Sonstiges Holzprojekt</option>
-            </select>
-            <textarea name="project" placeholder="Kurzbeschreibung des Projekts" required></textarea>
-            <input type="hidden" name="_subject" value="Neue Anfrage über Meisterservice" />
-            <button class="btn" type="submit">Anfrage absenden</button>
-            <div class="small">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Bearbeitung deiner Anfrage zu.</div>
-          </form>
+        <div class="hero-side">
+          <div class="card visual-card">
+            <div class="visual-top">
+              <img class="visual-logo" src="logo.png" alt="Meisterservice Logo groß" />
+              <div>
+                <h2>Meisterservice</h2>
+                <p>Holzbau, Außenbereiche und passende regionale Vermittlung im Kreis Calw.</p>
+              </div>
+            </div>
+
+            <ul class="checklist">
+              <li>
+                <strong>Von Anfrage bis Weitergabe</strong>
+                Deine Angaben werden gesammelt, strukturiert und an passend ausgewählte Betriebe vorbereitet weitergegeben.
+              </li>
+              <li>
+                <strong>Für private Projekte rund ums Haus</strong>
+                Zum Beispiel Carports, Terrassenüberdachungen, Sichtschutz, Fassaden oder Zimmerei.
+              </li>
+              <li>
+                <strong>Regionaler Fokus statt unübersichtlicher Suche</strong>
+                Ein klarer Weg für Interessenten im Kreis Calw, ohne langes Suchen bei zig Anbietern.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card form-card" id="anfrage">
+            <h3>Projekt anfragen</h3>
+            <p>Beschreibe dein Vorhaben kurz. Die Anfrage wird strukturiert erfasst und für die passende Weiterbearbeitung vorbereitet.</p>
+            <form action="https://formspree.io/f/meerkaoq" method="post">
+              <input type="text" name="name" placeholder="Name" required />
+              <input type="text" name="phone" placeholder="Telefonnummer" required />
+              <input type="email" name="email" placeholder="E-Mail-Adresse" required />
+              <input type="text" name="location" placeholder="Ort / PLZ im Kreis Calw" required />
+              <select name="service" required>
+                <option value="">Leistung auswählen</option>
+                <option>Carport</option>
+                <option>Terrassenüberdachung</option>
+                <option>Zimmerei / Holzbau</option>
+                <option>Gartenhaus / Sichtschutz</option>
+                <option>Holzfassade</option>
+                <option>Balkon / Holztreppe</option>
+                <option>Sonstiges Holzprojekt</option>
+              </select>
+              <textarea name="project" placeholder="Kurzbeschreibung des Projekts" required></textarea>
+              <input type="hidden" name="_subject" value="Neue Anfrage über Meisterservice" />
+              <button class="btn" type="submit">Anfrage absenden</button>
+              <div class="small">Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Bearbeitung deiner Anfrage zu.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorteile">
+      <div class="container">
+        <div class="section-head">
+          <h2>Warum Meisterservice?</h2>
+          <p>Die Website ist darauf ausgelegt, Anfragen im Holzbau-Bereich klarer, einfacher und regional passender zu machen.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card info-card">
+            <div class="label">Regionaler Fokus</div>
+            <p>Statt unübersichtlicher Suche nach beliebigen Betrieben liegt der Fokus auf regionalen Handwerksbetrieben im Kreis Calw und passender Projektzuordnung.</p>
+          </div>
+          <div class="card info-card">
+            <div class="label">Struktur statt Chaos</div>
+            <p>Alle wichtigen Projektdaten werden von Anfang an gesammelt, damit Anfragen sauber vorbereitet und verständlich weitergegeben werden können.</p>
+          </div>
+          <div class="card info-card">
+            <div class="label">Weniger Aufwand</div>
+            <p>Von der ersten Eingabe bis zur vorbereiteten Weitergabe wird der Anfrageprozess so einfach wie möglich gehalten.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -346,21 +594,37 @@
     <section id="leistungen">
       <div class="container">
         <div class="section-head">
-          <h2>Leistungen im Überblick</h2>
-          <p>Der Fokus liegt auf Holzprojekten rund ums Haus und Außenbereiche im Kreis Calw.</p>
+          <h2>Geeignet für diese Projekte</h2>
+          <p>Der Schwerpunkt liegt auf Holzprojekten rund ums Haus und Außenbereiche für private Interessenten.</p>
         </div>
-        <div class="services">
+
+        <div class="grid-3">
           <div class="card service">
             <h3>Carports & Überdachungen</h3>
-            <p>Holz-Carports, Eingangsüberdachungen und Terrassenlösungen für private Grundstücke.</p>
+            <p>Für Holz-Carports, Eingangsüberdachungen oder Terrassenlösungen.</p>
+            <ul>
+              <li>Carports</li>
+              <li>Terrassenüberdachungen</li>
+              <li>Pergolen</li>
+            </ul>
           </div>
           <div class="card service">
             <h3>Zimmerei & Holzbau</h3>
-            <p>Individuelle Holzbau-Projekte, Konstruktionen und klassische Zimmereiarbeiten.</p>
+            <p>Für klassische Holzbau-Projekte und individuelle Konstruktionen.</p>
+            <ul>
+              <li>Zimmereiarbeiten</li>
+              <li>Holzbau-Konstruktionen</li>
+              <li>Außenlösungen aus Holz</li>
+            </ul>
           </div>
           <div class="card service">
-            <h3>Terrassen & Außenbereiche</h3>
-            <p>Holzterrassen, Sichtschutz, Pergolen und weitere bauliche Lösungen im Außenbereich.</p>
+            <h3>Fassade, Garten & Ausbau</h3>
+            <p>Für Sichtschutz, Gartenhäuser, Fassaden und weitere Holzarbeiten.</p>
+            <ul>
+              <li>Holzfassaden</li>
+              <li>Gartenhäuser</li>
+              <li>Sichtschutz & Balkone</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -369,47 +633,25 @@
     <section id="ablauf">
       <div class="container">
         <div class="section-head">
-          <h2>So funktioniert es</h2>
-          <p>Einfacher Ablauf für Interessenten aus dem Kreis Calw.</p>
+          <h2>So funktioniert der Ablauf</h2>
+          <p>Ein klarer Prozess vom ersten Formular bis zur möglichen Kontaktvermittlung an einen passenden regionalen Betrieb.</p>
         </div>
-        <div class="steps">
+
+        <div class="grid-3">
           <div class="card step">
             <div class="step-number">1</div>
-            <h3>Projekt beschreiben</h3>
-            <p>Gib an, was du planst, wo das Projekt stattfindet und welche Holzarbeiten gewünscht sind.</p>
+            <h3>Anfrage stellen</h3>
+            <p>Du beschreibst dein Holzprojekt, den Ort und die gewünschte Leistung in wenigen Minuten online.</p>
           </div>
           <div class="card step">
             <div class="step-number">2</div>
-            <h3>Anfrage prüfen</h3>
-            <p>Die Anfrage wird vorsortiert und für passende Fachbetriebe aus der Region vorbereitet.</p>
+            <h3>Daten werden vorbereitet</h3>
+            <p>Die Anfrage wird geprüft, vorsortiert und so aufbereitet, dass die wichtigsten Informationen direkt vorliegen.</p>
           </div>
           <div class="card step">
             <div class="step-number">3</div>
-            <h3>Passende Rückmeldung</h3>
-            <p>Im nächsten Schritt kann der Kontakt an einen regional passenden Betrieb weitergegeben werden.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <h2>Warum Meisterservice?</h2>
-          <p>Klare Spezialisierung auf regionale Holzbau-Projekte rund ums Haus.</p>
-        </div>
-        <div class="trust">
-          <div class="card">
-            <h3>Regionaler Fokus</h3>
-            <p>Konzentriert auf Anfragen aus dem Kreis Calw und passende regionale Fachbetriebe.</p>
-          </div>
-          <div class="card">
-            <h3>Klare Projektanfragen</h3>
-            <p>Die wichtigsten Angaben werden direkt abgefragt, damit Projekte schneller einschätzbar sind.</p>
-          </div>
-          <div class="card">
-            <h3>Einfacher Start</h3>
-            <p>Für Interessenten reicht zunächst eine kurze, unverbindliche Anfrage über das Formular.</p>
+            <h3>Passende Weitergabe</h3>
+            <p>Im nächsten Schritt kann die Anfrage an einen regional passenden Handwerksbetrieb weitergegeben werden.</p>
           </div>
         </div>
       </div>
@@ -420,18 +662,20 @@
         <div class="card cta">
           <div>
             <h2 style="margin:0 0 8px;">Holzprojekt im Kreis Calw geplant?</h2>
-            <p style="margin:0; color: var(--muted);">Jetzt unverbindlich anfragen und den ersten Schritt starten.</p>
+            <p style="margin:0; color: var(--muted);">Starte jetzt unverbindlich mit einer strukturierten Anfrage.</p>
           </div>
-          <a class="btn" href="#anfrage">Zur Anfrage</a>
+          <a class="btn" href="#anfrage">Jetzt Anfrage starten</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <strong>Meisterservice</strong><br />
-      Holzbau rund ums Haus im Kreis Calw
+    <div class="container footer-wrap">
+      <div>
+        <strong>Meisterservice</strong><br />
+        Holzbau rund ums Haus im Kreis Calw
+      </div>
       <div class="footer-links">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
@@ -441,4 +685,3 @@
   </footer>
 </body>
 </html>
-
