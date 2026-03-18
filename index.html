@@ -185,25 +185,16 @@
       margin: 0;
     }
 
-    .hero-points li,
-    .mini-card,
-    .card {
-      background: var(--surface);
-      border: 1px solid rgba(111, 77, 52, 0.08);
-      border-radius: var(--radius);
+    .hero-logo {
+      width: 112px;
+      height: 112px;
+      object-fit: contain;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 10px;
       box-shadow: var(--shadow);
-    }
-
-    .hero-points li {
-      padding: 14px 16px;
-      color: #2e2924;
-      font-size: 0.95rem;
-    }
-
-    .hero-points strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.98rem;
+      margin-bottom: 18px;
     }
 
     .hero-side {
@@ -216,53 +207,16 @@
       background: linear-gradient(180deg, #fff, var(--surface-2));
     }
 
-    .visual-top {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-
-    .visual-logo {
-      width: 84px;
-      height: 84px;
-      object-fit: contain;
-      border-radius: 18px;
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 8px;
-    }
-
-    .visual-top h2 {
-      margin: 0 0 6px;
-      font-size: 1.55rem;
-    }
-
-    .visual-top p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .checklist {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
       display: grid;
-      gap: 12px;
-    }
-
-    .checklist li {
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: #fff;
-      border: 1px solid var(--line);
-    }
-
-    .checklist strong {
-      display: block;
-      margin-bottom: 3px;
-      font-size: 0.97rem;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 1.4rem;
+      margin-bottom: 14px;
     }
 
     .form-card {
@@ -442,9 +396,9 @@
         height: 46px;
       }
 
-      .visual-logo {
-        width: 72px;
-        height: 72px;
+      .hero-logo {
+        width: 88px;
+        height: 88px;
       }
 
       .btn,
@@ -482,63 +436,20 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
+          <img class="hero-logo" src="logo.png" alt="Meisterservice Logo groß" />
           <div class="eyebrow">Regional. Einfach. Passend vermittelt.</div>
           <h1>Holzbau rund ums Haus im Kreis Calw – einfach online anfragen</h1>
           <p class="lead">
-            Meisterservice unterstützt bei der Anfrage für Holzprojekte rund ums Haus und bringt Interessenten mit passenden regionalen Handwerksbetrieben zusammen – von der ersten Anfrage bis zur strukturierten Weitergabe an geeignete Fachbetriebe.
+            Passende regionale Handwerksbetriebe für Holzprojekte rund ums Haus finden – strukturiert, unverbindlich und ohne langes Suchen.
           </p>
 
           <div class="hero-actions">
             <a class="btn" href="#anfrage">Projekt anfragen</a>
-            <a class="btn secondary" href="#ablauf">So funktioniert es</a>
+            <a class="btn secondary" href="#leistungen">Leistungen ansehen</a>
           </div>
-
-          <ul class="hero-points">
-            <li>
-              <strong>Regionale Fachbetriebe</strong>
-              Fokus auf passende Handwerksbetriebe aus dem Kreis Calw und Umgebung.
-            </li>
-            <li>
-              <strong>Weniger Aufwand für dich</strong>
-              Die wichtigsten Projektdaten werden direkt sauber erfasst und vorsortiert.
-            </li>
-            <li>
-              <strong>Klare Projektanfragen</strong>
-              Statt unklarer Telefonate startet alles mit einer strukturierten Online-Anfrage.
-            </li>
-            <li>
-              <strong>Einfacher Start</strong>
-              Unverbindlich anfragen und den ersten Schritt für dein Holzprojekt machen.
-            </li>
-          </ul>
         </div>
 
         <div class="hero-side">
-          <div class="card visual-card">
-            <div class="visual-top">
-              <img class="visual-logo" src="logo.png" alt="Meisterservice Logo groß" />
-              <div>
-                <h2>Meisterservice</h2>
-                <p>Holzbau, Außenbereiche und passende regionale Vermittlung im Kreis Calw.</p>
-              </div>
-            </div>
-
-            <ul class="checklist">
-              <li>
-                <strong>Von Anfrage bis Weitergabe</strong>
-                Deine Angaben werden gesammelt, strukturiert und an passend ausgewählte Betriebe vorbereitet weitergegeben.
-              </li>
-              <li>
-                <strong>Für private Projekte rund ums Haus</strong>
-                Zum Beispiel Carports, Terrassenüberdachungen, Sichtschutz, Fassaden oder Zimmerei.
-              </li>
-              <li>
-                <strong>Regionaler Fokus statt unübersichtlicher Suche</strong>
-                Ein klarer Weg für Interessenten im Kreis Calw, ohne langes Suchen bei zig Anbietern.
-              </li>
-            </ul>
-          </div>
-
           <div class="card form-card" id="anfrage">
             <h3>Projekt anfragen</h3>
             <p>Beschreibe dein Vorhaben kurz. Die Anfrage wird strukturiert erfasst und für die passende Weiterbearbeitung vorbereitet.</p>
@@ -567,70 +478,9 @@
       </div>
     </section>
 
-    <section id="vorteile">
-      <div class="container">
-        <div class="section-head">
-          <h2>Warum Meisterservice?</h2>
-          <p>Die Website ist darauf ausgelegt, Anfragen im Holzbau-Bereich klarer, einfacher und regional passender zu machen.</p>
-        </div>
+    
 
-        <div class="grid-3">
-          <div class="card info-card">
-            <div class="label">Regionaler Fokus</div>
-            <p>Statt unübersichtlicher Suche nach beliebigen Betrieben liegt der Fokus auf regionalen Handwerksbetrieben im Kreis Calw und passender Projektzuordnung.</p>
-          </div>
-          <div class="card info-card">
-            <div class="label">Struktur statt Chaos</div>
-            <p>Alle wichtigen Projektdaten werden von Anfang an gesammelt, damit Anfragen sauber vorbereitet und verständlich weitergegeben werden können.</p>
-          </div>
-          <div class="card info-card">
-            <div class="label">Weniger Aufwand</div>
-            <p>Von der ersten Eingabe bis zur vorbereiteten Weitergabe wird der Anfrageprozess so einfach wie möglich gehalten.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="leistungen">
-      <div class="container">
-        <div class="section-head">
-          <h2>Geeignet für diese Projekte</h2>
-          <p>Der Schwerpunkt liegt auf Holzprojekten rund ums Haus und Außenbereiche für private Interessenten.</p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card service">
-            <h3>Carports & Überdachungen</h3>
-            <p>Für Holz-Carports, Eingangsüberdachungen oder Terrassenlösungen.</p>
-            <ul>
-              <li>Carports</li>
-              <li>Terrassenüberdachungen</li>
-              <li>Pergolen</li>
-            </ul>
-          </div>
-          <div class="card service">
-            <h3>Zimmerei & Holzbau</h3>
-            <p>Für klassische Holzbau-Projekte und individuelle Konstruktionen.</p>
-            <ul>
-              <li>Zimmereiarbeiten</li>
-              <li>Holzbau-Konstruktionen</li>
-              <li>Außenlösungen aus Holz</li>
-            </ul>
-          </div>
-          <div class="card service">
-            <h3>Fassade, Garten & Ausbau</h3>
-            <p>Für Sichtschutz, Gartenhäuser, Fassaden und weitere Holzarbeiten.</p>
-            <ul>
-              <li>Holzfassaden</li>
-              <li>Gartenhäuser</li>
-              <li>Sichtschutz & Balkone</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ablauf">
+    <section>
       <div class="container">
         <div class="section-head">
           <h2>So funktioniert der Ablauf</h2>
