@@ -101,6 +101,13 @@
       font-size: 0.96rem;
     }
 
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(111, 77, 52, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
     .btn,
     button.btn {
       display: inline-flex;
@@ -186,15 +193,15 @@
     }
 
     .hero-logo {
-      width: 112px;
-      height: 112px;
+      width: 240px;
+      height: 240px;
       object-fit: contain;
-      border-radius: 24px;
+      border-radius: 28px;
       background: #fff;
       border: 1px solid var(--line);
-      padding: 10px;
+      padding: 20px;
       box-shadow: var(--shadow);
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
 
     .hero-side {
@@ -397,8 +404,9 @@
       }
 
       .hero-logo {
-        width: 88px;
-        height: 88px;
+        width: 140px;
+        height: 140px;
+        padding: 12px;
       }
 
       .btn,
@@ -424,9 +432,6 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#vorteile">Vorteile</a>
-        <a href="#ablauf">Ablauf</a>
         <a href="#anfrage" class="btn">Jetzt anfragen</a>
       </nav>
     </div>
@@ -478,9 +483,61 @@
       </div>
     </section>
 
-    
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-head">
+          <h2>Leistungen</h2>
+          <p>Typische Holzprojekte rund ums Haus im Kreis Calw.</p>
+        </div>
 
-    <section>
+        <div class="grid-3">
+          <div class="card service">
+            <div class="icon-box">🪵</div>
+            <h3>Carports & Überdachungen</h3>
+            <p>Carports, Terrassenüberdachungen, Pergolen und ähnliche Außenlösungen aus Holz.</p>
+          </div>
+          <div class="card service">
+            <div class="icon-box">🛠️</div>
+            <h3>Zimmerei & Holzbau</h3>
+            <p>Individuelle Holzbauarbeiten, Konstruktionen und klassische Zimmereiprojekte.</p>
+          </div>
+          <div class="card service">
+            <div class="icon-box">🏡</div>
+            <h3>Fassade, Garten & Ausbau</h3>
+            <p>Sichtschutz, Fassaden, Gartenhäuser, Balkone, Treppen und weitere Holzarbeiten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorteile">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vorteile</h2>
+          <p>Weniger Aufwand, klarere Anfrage und regionaler Fokus.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card info-card">
+            <div class="icon-box">📍</div>
+            <h3>Regional passend</h3>
+            <p>Fokus auf passende Handwerksbetriebe aus dem Kreis Calw und Umgebung.</p>
+          </div>
+          <div class="card info-card">
+            <div class="icon-box">📋</div>
+            <h3>Sauber vorbereitet</h3>
+            <p>Die wichtigsten Projektdaten werden direkt strukturiert und verständlich erfasst.</p>
+          </div>
+          <div class="card info-card">
+            <div class="icon-box">🤝</div>
+            <h3>Weniger Suchaufwand</h3>
+            <p>Einfach anfragen statt lange unübersichtlich nach vielen Betrieben zu suchen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf">
       <div class="container">
         <div class="section-head">
           <h2>So funktioniert der Ablauf</h2>
