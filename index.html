@@ -9,6 +9,7 @@
     :root {
       --bg: #f6f2ec;
       --surface: #ffffff;
+      --surface-soft: #fbf7f2;
       --text: #1f1b17;
       --muted: #6a625a;
       --line: #e7ddd1;
@@ -133,7 +134,7 @@
     }
 
     .hero {
-      padding: 64px 0 40px;
+      padding: 44px 0 26px;
     }
 
     .hero-grid {
@@ -144,16 +145,15 @@
     }
 
     .hero-logo-wrap {
-      min-height: 320px;
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .hero-logo {
-      width: 340px;
-      height: 340px;
+      width: 320px;
+      height: 320px;
       object-fit: contain;
       border-radius: 34px;
       background: #fff;
@@ -171,11 +171,11 @@
       border-radius: 999px;
       font-weight: 700;
       font-size: 0.94rem;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     h1 {
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       font-size: clamp(2.55rem, 4.6vw, 5rem);
       line-height: 1.03;
       letter-spacing: -1.3px;
@@ -185,7 +185,7 @@
       font-size: 1.08rem;
       color: var(--muted);
       max-width: 720px;
-      margin: 0 0 24px;
+      margin: 0 0 20px;
     }
 
     .hero-actions {
@@ -251,7 +251,13 @@
     }
 
     section {
-      padding: 34px 0;
+      padding: 44px 0;
+    }
+
+    .band {
+      background: var(--surface-soft);
+      border-top: 1px solid rgba(122, 84, 52, 0.06);
+      border-bottom: 1px solid rgba(122, 84, 52, 0.06);
     }
 
     .section-head {
@@ -285,16 +291,29 @@
 
     .icon-circle,
     .step-number {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       display: grid;
       place-items: center;
       border-radius: 50%;
       background: var(--accent-soft);
       color: var(--accent-dark);
+      margin-bottom: 18px;
+    }
+
+    .icon-circle svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .step-number {
       font-weight: 800;
       font-size: 1.35rem;
-      margin-bottom: 18px;
     }
 
     .service h3,
@@ -347,15 +366,11 @@
       .grid-3 {
         grid-template-columns: 1fr;
       }
-
-      .hero-logo-wrap {
-        min-height: 220px;
-      }
     }
 
     @media (max-width: 640px) {
       .hero {
-        padding-top: 40px;
+        padding-top: 34px;
       }
 
       .brand-logo {
@@ -363,13 +378,9 @@
         height: 50px;
       }
 
-      .hero-logo-wrap {
-        min-height: 160px;
-      }
-
       .hero-logo {
-        width: 180px;
-        height: 180px;
+        width: 200px;
+        height: 200px;
         padding: 14px;
       }
 
@@ -455,7 +466,7 @@
       </div>
     </section>
 
-    <section id="leistungen">
+    <section id="leistungen" class="band">
       <div class="container">
         <div class="section-head">
           <h2>Leistungen</h2>
@@ -464,17 +475,23 @@
 
         <div class="grid-3">
           <div class="card service">
-            <div class="icon-circle">🪵</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-5h6v5"/></svg>
+            </div>
             <h3>Carports & Überdachungen</h3>
             <p>Carports, Terrassenüberdachungen, Pergolen und ähnliche Außenlösungen aus Holz.</p>
           </div>
           <div class="card service">
-            <div class="icon-circle">🛠️</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 7l3 3"/><path d="M4 20l6-6 7-7 3 3-7 7-6 6H4z"/><path d="M12 9l3 3"/></svg>
+            </div>
             <h3>Zimmerei & Holzbau</h3>
             <p>Individuelle Holzbauarbeiten, Konstruktionen und klassische Zimmereiprojekte.</p>
           </div>
           <div class="card service">
-            <div class="icon-circle">🏡</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V6h14v15"/><path d="M9 10h2"/><path d="M13 10h2"/><path d="M9 14h2"/><path d="M13 14h2"/></svg>
+            </div>
             <h3>Fassade, Garten & Ausbau</h3>
             <p>Sichtschutz, Fassaden, Gartenhäuser, Balkone, Treppen und weitere Holzarbeiten.</p>
           </div>
@@ -491,17 +508,23 @@
 
         <div class="grid-3">
           <div class="card info-card">
-            <div class="icon-circle">📍</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            </div>
             <h3>Regional passend</h3>
             <p>Fokus auf passende Handwerksbetriebe aus dem Kreis Calw und Umgebung.</p>
           </div>
           <div class="card info-card">
-            <div class="icon-circle">📋</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6"/><path d="M9 5H7a2 2 0 0 0-2 2v12h14V7a2 2 0 0 0-2-2h-2"/><path d="M9 12h6"/><path d="M9 16h4"/></svg>
+            </div>
             <h3>Sauber vorbereitet</h3>
             <p>Die wichtigsten Projektdaten werden direkt strukturiert und verständlich erfasst.</p>
           </div>
           <div class="card info-card">
-            <div class="icon-circle">🤝</div>
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8"/><path d="M12 8l4 4-4 4"/><path d="M4 6h8"/><path d="M12 18h8"/></svg>
+            </div>
             <h3>Weniger Suchaufwand</h3>
             <p>Einfach anfragen statt lange unübersichtlich nach vielen Betrieben zu suchen.</p>
           </div>
@@ -509,7 +532,7 @@
       </div>
     </section>
 
-    <section id="ablauf">
+    <section id="ablauf" class="band">
       <div class="container">
         <div class="section-head">
           <h2>So funktioniert der Ablauf</h2>
