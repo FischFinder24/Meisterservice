@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partner – Meisterservice</title>
+  <meta
+    name="description"
+    content="Regionale Handwerksbetriebe und Partner im Netzwerk von Meisterservice im Kreis Calw."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f5efe8;
+      --surface: #ffffff;
+      --text: #1f1b17;
+      --muted: #655c53;
+      --line: #e0d4c6;
+      --accent: #845a35;
+      --accent-dark: #684523;
+      --accent-soft: #efe3d6;
+      --shadow: 0 16px 38px rgba(31, 27, 23, 0.07);
+      --shadow-hover: 0 22px 48px rgba(31, 27, 23, 0.11);
+      --radius: 24px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(132, 90, 53, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    header {
+      position: relative;
+      background: rgba(245, 239, 232, 0.98);
+      border-bottom: 1px solid rgba(132, 90, 53, 0.08);
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0 20px;
+    }
+
+    .brand {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
+    }
+
+    .brand-mark {
+      width: 220px;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 6px 14px rgba(31, 27, 23, 0.06));
+    }
+
+    .brand-slogan {
+      font-size: 1.06rem;
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      color: var(--muted);
+      max-width: 460px;
+    }
+
+    .nav-actions {
+      grid-column: 3;
+      justify-self: end;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .top-links a {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .top-links a:hover,
+    .top-links a.active {
+      color: var(--text);
+    }
+
+    .page-hero {
+      padding: 64px 0 30px;
+    }
+
+    .hero-box {
+      padding: 40px;
+      background: linear-gradient(135deg, #fff, #f7f0e7);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.4rem, 4.5vw, 4.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.85;
+    }
+
+    section { padding: 56px 0; }
+
+    .section-head {
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.83rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.95rem, 3vw, 2.45rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .partner-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .partner-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, rgba(132, 90, 53, 0.95), rgba(132, 90, 53, 0.16));
+    }
+
+    .partner-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(132, 90, 53, 0.14);
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-radius: 18px;
+      border: 1px solid rgba(132, 90, 53, 0.10);
+      background: linear-gradient(135deg, #f8f2ea, #efe3d6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 18px;
+      padding: 18px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .partner-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.14rem;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .partner-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.78;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      padding: 34px;
+      border: 1px solid rgba(132, 90, 53, 0.10);
+      background: linear-gradient(135deg, #fff, #f7f0e7);
+    }
+
+    .cta h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 2.4vw, 2.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .cta p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 620px;
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      border-top: 1px solid rgba(132, 90, 53, 0.08);
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1080px) {
+      .nav {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .brand,
+      .nav-actions {
+        grid-column: 1;
+      }
+
+      .nav-actions {
+        justify-self: center;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav { gap: 14px; }
+      .nav-actions { width: 100%; }
+      .top-links { justify-content: center; gap: 10px 14px; }
+      .nav-actions .btn { width: 100%; }
+      .brand-mark { width: 165px; }
+      .brand-slogan { font-size: 0.95rem; max-width: 300px; }
+      .hero-box,
+      .partner-card,
+      .cta { padding: 24px; }
+      h1 { font-size: clamp(2.1rem, 12vw, 3.4rem); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
+        <img class="brand-mark" src="logo.png" alt="Meisterservice Logo" />
+        <div class="brand-slogan">Holzbau rund ums Haus im Kreis Calw</div>
+      </a>
+
+      <div class="nav-actions">
+        <nav class="top-links" aria-label="Bereiche">
+          <a href="index.html#leistungen">Leistungen</a>
+          <a href="partner.html" class="active">Partner</a>
+          <a href="projekte.html">Projekte</a>
+          <a href="feedback.html">Feedback</a>
+        </nav>
+        <a href="index.html#anfrage" class="btn">Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="card hero-box">
+          <div class="eyebrow">Partner</div>
+          <h1>Regionale Handwerksbetriebe im Netzwerk</h1>
+          <p class="lead">
+            Hier können Partnerbetriebe mit Bild, Logo, Spezialisierung und kurzem Profil vorgestellt werden.
+            So wirkt die Zusammenarbeit sichtbar, regional und vertrauenswürdig.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="section-kicker">Übersicht</span>
+          <h2>Beispielhafte Partnerdarstellung</h2>
+          <p>
+            Ersetze die Beispielinhalte einfach später durch echte Betriebsnamen, Fotos, Logos und Fachbereiche.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card partner-card">
+            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
+            <div class="tag-row">
+              <span class="tag">Kreis Calw</span>
+              <span class="tag">Zimmerei</span>
+            </div>
+            <h3>Holzbau Müller</h3>
+            <p>
+              Schwerpunkt auf Carports, Terrassenüberdachungen und individuellen Holzkonstruktionen rund ums Haus.
+            </p>
+          </div>
+
+          <div class="card partner-card">
+            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
+            <div class="tag-row">
+              <span class="tag">Region Calw</span>
+              <span class="tag">Außenbereich</span>
+            </div>
+            <h3>Weber Holz & Dach</h3>
+            <p>
+              Fokus auf Pergolen, Sichtschutz, Fassaden und weitere Holzarbeiten im Außenbereich.
+            </p>
+          </div>
+
+          <div class="card partner-card">
+            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
+            <div class="tag-row">
+              <span class="tag">Regional</span>
+              <span class="tag">Holzbau</span>
+            </div>
+            <h3>Schmid Zimmerei</h3>
+            <p>
+              Individuelle Lösungen für Holzbau, Gartenhäuser, Balkone und kleinere Ausbauprojekte.
+            </p>
+          </div>
+
+          <div class="card partner-card">
+            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
+            <div class="tag-row">
+              <span class="tag">Nagold</span>
+              <span class="tag">Fassade</span>
+            </div>
+            <h3>Holzwerk Braun</h3>
+            <p>
+              Spezialisierung auf Holzfassaden, Verkleidungen und moderne Gestaltungen im Außenbereich.
+            </p>
+          </div>
+
+          <div class="card partner-card">
+            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
+            <div class="tag-row">
+              <span class="tag">Bad Wildbad</span>
+              <span class="tag">Gartenbau</span>
+            </div>
+            <h3>Holz & Garten Keller</h3>
+            <p>
+              Sichtschutz, Gartenhäuser und funktionale Holzlösungen für Grundstück und Garten.
+            </p>
+          </div>
+
+          <div class="card partner-card">
+            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
+            <div class="tag-row">
+              <span class="tag">Calw</span>
+              <span class="tag">Ausbau</span>
+            </div>
+            <h3>Meisterbetrieb Huber</h3>
+            <p>
+              Holztreppen, Balkone und weitere individuelle Ausbauarbeiten mit regionalem Fokus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card cta">
+          <div>
+            <h2>Holzprojekt im Kreis Calw geplant?</h2>
+            <p>
+              Zurück zur Startseite und jetzt unverbindlich anfragen.
+            </p>
+          </div>
+          <a class="btn" href="index.html#anfrage">Zur Anfrage</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <strong>Meisterservice</strong><br />
+        Holzbau rund ums Haus im Kreis Calw
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Startseite</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
