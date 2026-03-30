@@ -20,7 +20,6 @@
     :root {
       --bg: #f5efe8;
       --surface: #ffffff;
-      --surface-soft: #fbf7f2;
       --text: #1f1b17;
       --muted: #655c53;
       --line: #e0d4c6;
@@ -33,13 +32,8 @@
       --max: 1160px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -51,15 +45,8 @@
       text-rendering: optimizeLegibility;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       width: min(100% - 32px, var(--max));
@@ -268,7 +255,7 @@
       border-radius: 18px;
       padding: 15px 16px;
       outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     input::placeholder,
@@ -300,15 +287,10 @@
       line-height: 1.7;
     }
 
-    section {
-      padding: 56px 0;
-    }
+    section { padding: 56px 0; }
 
     #anfrage,
     #leistungen,
-    #partner,
-    #projekte,
-    #feedback,
     #vorteile,
     #ablauf {
       scroll-margin-top: 24px;
@@ -359,34 +341,17 @@
 
     .service,
     .info-card,
-    .step,
-    .partner-card,
-    .project-card,
-    .feedback-card {
+    .step {
       position: relative;
       overflow: hidden;
       padding: 28px;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    }
-
-    .service,
-    .info-card,
-    .step {
       min-height: 228px;
-    }
-
-    .partner-card,
-    .project-card,
-    .feedback-card {
-      min-height: 100%;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
     .service::before,
     .info-card::before,
-    .step::before,
-    .partner-card::before,
-    .project-card::before,
-    .feedback-card::before {
+    .step::before {
       content: "";
       position: absolute;
       top: 0;
@@ -398,10 +363,7 @@
 
     .service:hover,
     .info-card:hover,
-    .step:hover,
-    .partner-card:hover,
-    .project-card:hover,
-    .feedback-card:hover {
+    .step:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-hover);
       border-color: rgba(132, 90, 53, 0.14);
@@ -443,10 +405,7 @@
 
     .service h3,
     .info-card h3,
-    .step h3,
-    .partner-card h3,
-    .project-card h3,
-    .feedback-card h3 {
+    .step h3 {
       margin: 0 0 12px;
       font-size: 1.14rem;
       line-height: 1.35;
@@ -455,61 +414,11 @@
 
     .service p,
     .info-card p,
-    .step p,
-    .partner-card p,
-    .project-card p,
-    .feedback-card p {
+    .step p {
       margin: 0;
       color: var(--muted);
       font-size: 0.98rem;
       line-height: 1.78;
-    }
-
-    .image-placeholder {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      border-radius: 18px;
-      border: 1px solid rgba(132, 90, 53, 0.10);
-      background: linear-gradient(135deg, #f8f2ea, #efe3d6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--accent-dark);
-      font-weight: 700;
-      margin-bottom: 18px;
-      padding: 18px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .feedback-quote {
-      font-size: 1rem;
-      color: var(--text);
-      line-height: 1.85;
-      margin-bottom: 18px;
-    }
-
-    .feedback-author {
-      color: var(--accent-dark);
-      font-size: 0.93rem;
-      font-weight: 700;
     }
 
     .cta-shell {
@@ -663,9 +572,6 @@
       .service,
       .info-card,
       .step,
-      .partner-card,
-      .project-card,
-      .feedback-card,
       .cta {
         padding: 24px;
       }
@@ -675,7 +581,7 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Zurück nach oben">
+      <a class="brand" href="index.html" aria-label="Zur Startseite">
         <img class="brand-mark" src="logo.png" alt="Meisterservice Logo" />
         <div class="brand-slogan">Holzbau rund ums Haus im Kreis Calw</div>
       </a>
@@ -683,9 +589,9 @@
       <div class="nav-actions">
         <nav class="top-links" aria-label="Bereiche">
           <a href="#leistungen">Leistungen</a>
-          <a href="#partner">Partner</a>
-          <a href="#projekte">Projekte</a>
-          <a href="#feedback">Feedback</a>
+          <a href="partner.html">Partner</a>
+          <a href="projekte.html">Projekte</a>
+          <a href="feedback.html">Feedback</a>
         </nav>
         <a href="#anfrage" class="btn">Jetzt anfragen</a>
       </div>
@@ -809,133 +715,7 @@
       </div>
     </section>
 
-    <section id="partner">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Partner</span>
-          <h2>Regionale Handwerksbetriebe im Netzwerk</h2>
-          <p>
-            Hier können ausgewählte Partnerbetriebe mit Bild, Schwerpunkt und kurzem Profil vorgestellt werden.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card partner-card">
-            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
-            <div class="tag-row">
-              <span class="tag">Kreis Calw</span>
-              <span class="tag">Zimmerei</span>
-            </div>
-            <h3>Beispielbetrieb Holzbau Müller</h3>
-            <p>
-              Schwerpunkt auf Carports, Terrassenüberdachungen und individuellen Holzkonstruktionen rund ums Haus.
-            </p>
-          </div>
-
-          <div class="card partner-card">
-            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
-            <div class="tag-row">
-              <span class="tag">Region Calw</span>
-              <span class="tag">Außenbereich</span>
-            </div>
-            <h3>Beispielbetrieb Weber Holz & Dach</h3>
-            <p>
-              Fokus auf Pergolen, Sichtschutz, Fassaden und weitere Holzarbeiten im Außenbereich.
-            </p>
-          </div>
-
-          <div class="card partner-card">
-            <div class="image-placeholder">Logo oder Bild des Betriebs</div>
-            <div class="tag-row">
-              <span class="tag">Regional</span>
-              <span class="tag">Holzbau</span>
-            </div>
-            <h3>Beispielbetrieb Schmid Zimmerei</h3>
-            <p>
-              Individuelle Lösungen für Holzbau, Gartenhäuser, Balkone und kleinere Ausbauprojekte.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projekte" class="band">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Projekte</span>
-          <h2>Beispielhafte Arbeiten aus dem Bereich Holzbau</h2>
-          <p>
-            Dieser Bereich eignet sich für Referenzbilder, um Stil, Qualität und typische Projektgrößen zu zeigen.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Carport</div>
-            <h3>Carport mit Seitenverkleidung</h3>
-            <p>
-              Beispiel für eine saubere und moderne Holzlösung im Eingangs- oder Hofbereich.
-            </p>
-          </div>
-
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Überdachung</div>
-            <h3>Terrassenüberdachung aus Holz</h3>
-            <p>
-              Referenz für wettergeschützte Außenbereiche mit schlichter, hochwertiger Optik.
-            </p>
-          </div>
-
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Sichtschutz</div>
-            <h3>Sichtschutz & Gartenelemente</h3>
-            <p>
-              Typische Projekte für Garten, Grundstücksgrenzen und funktionale Holzgestaltung im Außenraum.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="feedback">
-      <div class="container">
-        <div class="section-head">
-          <span class="section-kicker">Feedback</span>
-          <h2>Rückmeldungen zur Anfrage und Vermittlung</h2>
-          <p>
-            Hier können kurze Kundenstimmen stehen, die Vertrauen schaffen und den Ablauf greifbarer machen.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card feedback-card">
-            <h3>Schnell und übersichtlich</h3>
-            <p class="feedback-quote">
-              „Die Anfrage war in wenigen Minuten gestellt und alle wichtigen Angaben waren direkt sauber erfasst.“
-            </p>
-            <div class="feedback-author">Beispielkunde aus Calw</div>
-          </div>
-
-          <div class="card feedback-card">
-            <h3>Angenehmer Ablauf</h3>
-            <p class="feedback-quote">
-              „Gerade weil man nicht selbst viele Betriebe zusammensuchen muss, war der Ablauf deutlich einfacher.“
-            </p>
-            <div class="feedback-author">Beispielkunde aus Nagold</div>
-          </div>
-
-          <div class="card feedback-card">
-            <h3>Regional passend</h3>
-            <p class="feedback-quote">
-              „Für unser Holzprojekt war der regionale Fokus hilfreich, weil direkt passende Ansprechpartner im Blick waren.“
-            </p>
-            <div class="feedback-author">Beispielkunde aus Bad Wildbad</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="vorteile" class="band">
+    <section id="vorteile">
       <div class="container">
         <div class="section-head">
           <span class="section-kicker">Vorteile</span>
@@ -992,7 +772,7 @@
       </div>
     </section>
 
-    <section id="ablauf">
+    <section id="ablauf" class="band">
       <div class="container">
         <div class="section-head">
           <span class="section-kicker">Ablauf</span>
@@ -1058,7 +838,9 @@
       <div class="footer-links">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
-        <a href="#anfrage">Anfrage</a>
+        <a href="partner.html">Partner</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="feedback.html">Feedback</a>
       </div>
     </div>
   </footer>
