@@ -75,7 +75,7 @@
       font-weight: 700;
       cursor: pointer;
       box-shadow: var(--shadow);
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
     }
 
     .btn:hover,
@@ -83,6 +83,14 @@
       background: var(--accent-dark);
       transform: translateY(-1px);
       box-shadow: var(--shadow-hover);
+    }
+
+    .btn:disabled,
+    button.btn:disabled {
+      opacity: 0.72;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: var(--shadow);
     }
 
     .btn.secondary {
@@ -285,6 +293,18 @@
       font-size: 0.84rem;
       margin-top: 2px;
       line-height: 1.7;
+    }
+
+    .form-message {
+      display: none;
+      margin-bottom: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid #efc2bf;
+      background: #fff4f2;
+      color: #9f1f18;
+      font-size: 0.93rem;
+      line-height: 1.6;
     }
 
     section { padding: 56px 0; }
@@ -624,7 +644,9 @@
               für die passende regionale Weitergabe vorbereitet.
             </p>
 
-            <form action="https://formspree.io/f/meerkaoq" method="post">
+            <div id="form-message" class="form-message" aria-live="polite"></div>
+
+            <form id="anfrage-form" action="https://formspree.io/f/meerkaoq" method="post">
               <input type="text" name="name" placeholder="Name" autocomplete="name" required />
               <input type="text" name="phone" placeholder="Telefonnummer" autocomplete="tel" required />
               <input type="email" name="email" placeholder="E-Mail-Adresse" autocomplete="email" required />
@@ -645,7 +667,7 @@
 
               <input type="hidden" name="_subject" value="Neue Anfrage über Meisterservice" />
 
-              <button class="btn" type="submit">Anfrage absenden</button>
+              <button class="btn" type="submit" id="submit-btn">Anfrage absenden</button>
 
               <div class="small">
                 Mit dem Absenden stimmst du der Verarbeitung deiner Angaben zur Bearbeitung deiner Anfrage zu.
@@ -844,5 +866,60 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    const form = document.getElementById("anfrage-form");
+    const messageBox = document.getElementById("form-message");
+    const submitBtn = document.getElementById("submit-btn");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      messageBox.style.display = "none";
+      messageBox.textContent = "";
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Wird gesendet...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        const data = await response.json().catch(() => null);
+
+        if (response.ok) {
+          window.location.href = "danke.html";
+          return;
+        }
+
+        if (data && data.errors && data.errors.length > 0) {
+          const errorText = data.errors.map(function (error) {
+            return error.message;
+          }).join(" ");
+
+          messageBox.textContent = errorText || "Bitte prüfe deine Angaben und versuche es erneut.";
+        } else {
+          messageBox.textContent = "Deine Anfrage konnte gerade nicht gesendet werden. Bitte prüfe die Angaben und versuche es erneut.";
+        }
+
+        messageBox.style.display = "block";
+      } catch (error) {
+        messageBox.textContent = "Es gab ein technisches Problem. Bitte versuche es in ein paar Minuten erneut.";
+        messageBox.style.display = "block";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Anfrage absenden";
+      }
+    });
+  </script>
 </body>
 </html>
