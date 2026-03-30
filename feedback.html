@@ -6,7 +6,7 @@
   <title>Feedback – Meisterservice</title>
   <meta
     name="description"
-    content="Feedback und Rückmeldungen zu Anfrage, Ablauf und regionaler Vermittlung über Meisterservice."
+    content="Kundenfeedback und Rückmeldungen zu Meisterservice im Kreis Calw."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,6 +33,7 @@
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -179,7 +180,7 @@
 
     .lead {
       margin: 0;
-      max-width: 760px;
+      max-width: 800px;
       color: var(--muted);
       font-size: 1.06rem;
       line-height: 1.85;
@@ -218,20 +219,20 @@
       line-height: 1.8;
     }
 
-    .grid-3 {
+    .grid-2 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
     }
 
-    .feedback-card {
+    .testimonial-card {
       position: relative;
       overflow: hidden;
-      padding: 28px;
+      padding: 30px;
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
-    .feedback-card::before {
+    .testimonial-card::before {
       content: "";
       position: absolute;
       top: 0;
@@ -241,30 +242,61 @@
       background: linear-gradient(90deg, rgba(132, 90, 53, 0.95), rgba(132, 90, 53, 0.16));
     }
 
-    .feedback-card:hover {
+    .testimonial-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-hover);
       border-color: rgba(132, 90, 53, 0.14);
     }
 
-    .feedback-card h3 {
-      margin: 0 0 12px;
-      font-size: 1.14rem;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
+    .stars {
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
     }
 
-    .feedback-quote {
-      margin: 0 0 18px;
+    .quote {
+      margin: 0 0 22px;
       color: var(--text);
       font-size: 1rem;
-      line-height: 1.85;
+      line-height: 1.9;
     }
 
-    .feedback-author {
+    .author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
       color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 1rem;
+      flex: 0 0 auto;
+    }
+
+    .author-meta strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .author-meta span {
+      color: var(--muted);
       font-size: 0.93rem;
-      font-weight: 700;
+    }
+
+    .example-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
 
     .cta {
@@ -331,7 +363,7 @@
     }
 
     @media (max-width: 980px) {
-      .grid-3 {
+      .grid-2 {
         grid-template-columns: 1fr;
       }
     }
@@ -344,7 +376,7 @@
       .brand-mark { width: 165px; }
       .brand-slogan { font-size: 0.95rem; max-width: 300px; }
       .hero-box,
-      .feedback-card,
+      .testimonial-card,
       .cta { padding: 24px; }
       h1 { font-size: clamp(2.1rem, 12vw, 3.4rem); }
     }
@@ -375,9 +407,10 @@
       <div class="container">
         <div class="card hero-box">
           <div class="eyebrow">Feedback</div>
-          <h1>Rückmeldungen zur Anfrage und Vermittlung</h1>
+          <h1>So können Kundenstimmen präsentiert werden</h1>
           <p class="lead">
-            Eine eigene Feedback-Seite schafft Vertrauen und wirkt deutlich sauberer, als alle Stimmen mit auf die Startseite zu packen.
+            Zwei Feedback-Karten sind bereits im passenden Stil eingebaut. Die Texte unten sind bewusst als
+            Beispiele angelegt und sollten vor Livegang durch echte Kundenrückmeldungen ersetzt werden.
           </p>
         </div>
       </div>
@@ -386,61 +419,49 @@
     <section>
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Stimmen</span>
-          <h2>Beispielhafte Rückmeldungen</h2>
+          <span class="section-kicker">Kundenstimmen</span>
+          <h2>Vertrauen durch klare Rückmeldungen</h2>
           <p>
-            Ersetze diese Platzhalter später durch echte, kurze Kundenstimmen oder Rückmeldungen von Partnerbetrieben.
+            Kurze, konkrete Aussagen wirken meist stärker als lange Texte. Ideal sind echte Namen oder
+            zumindest Vorname plus Ort.
           </p>
         </div>
 
-        <div class="grid-3">
-          <div class="card feedback-card">
-            <h3>Schnell und übersichtlich</h3>
-            <p class="feedback-quote">
-              „Die Anfrage war in wenigen Minuten gestellt und alle wichtigen Angaben waren direkt sauber erfasst.“
+        <div class="grid-2">
+          <div class="card testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              „Die Anfrage war schnell ausgefüllt und unser Vorhaben wurde deutlich strukturierter aufgenommen,
+              als wir es selbst beschrieben hätten. Der Ablauf war unkompliziert und angenehm.“
             </p>
-            <div class="feedback-author">Beispielkunde aus Calw</div>
+            <div class="author">
+              <div class="author-badge">BK</div>
+              <div class="author-meta">
+                <strong>Beispielkunde · Calw</strong>
+                <span>Platzhalter für echte Kundenstimme</span>
+              </div>
+            </div>
           </div>
 
-          <div class="card feedback-card">
-            <h3>Angenehmer Ablauf</h3>
-            <p class="feedback-quote">
-              „Gerade weil man nicht selbst viele Betriebe zusammensuchen muss, war der Ablauf deutlich einfacher.“
+          <div class="card testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="quote">
+              „Gerade weil wir nicht wussten, an welchen Betrieb wir uns wenden sollen, war der Service sehr
+              hilfreich. Die Anfrage wirkte sauber vorbereitet und hat uns Zeit gespart.“
             </p>
-            <div class="feedback-author">Beispielkunde aus Nagold</div>
+            <div class="author">
+              <div class="author-badge">BN</div>
+              <div class="author-meta">
+                <strong>Beispielkundin · Nagold</strong>
+                <span>Platzhalter für echte Kundenstimme</span>
+              </div>
+            </div>
           </div>
+        </div>
 
-          <div class="card feedback-card">
-            <h3>Regional passend</h3>
-            <p class="feedback-quote">
-              „Für unser Holzprojekt war der regionale Fokus hilfreich, weil direkt passende Ansprechpartner im Blick waren.“
-            </p>
-            <div class="feedback-author">Beispielkunde aus Bad Wildbad</div>
-          </div>
-
-          <div class="card feedback-card">
-            <h3>Klare Struktur</h3>
-            <p class="feedback-quote">
-              „Die Anfrage war verständlich aufgebaut und das Vorhaben ließ sich ohne Aufwand beschreiben.“
-            </p>
-            <div class="feedback-author">Beispielkunde aus Neubulach</div>
-          </div>
-
-          <div class="card feedback-card">
-            <h3>Vertrauenswürdig</h3>
-            <p class="feedback-quote">
-              „Die regionale Ausrichtung und die klare Darstellung haben direkt einen seriösen Eindruck gemacht.“
-            </p>
-            <div class="feedback-author">Beispielkunde aus Calw</div>
-          </div>
-
-          <div class="card feedback-card">
-            <h3>Gute Vorbereitung</h3>
-            <p class="feedback-quote">
-              „Man merkt, dass die Anfrage nicht einfach nur weitergeleitet wird, sondern vorher sauber aufgenommen wird.“
-            </p>
-            <div class="feedback-author">Beispielkunde aus Bad Teinach</div>
-          </div>
+        <div class="example-note">
+          Für die Live-Version solltest du hier möglichst echte Stimmen mit Vorname und Ort einsetzen,
+          zum Beispiel „Tobias, Calw“ oder „Sandra, Nagold“.
         </div>
       </div>
     </section>
@@ -451,7 +472,7 @@
           <div>
             <h2>Jetzt eigenes Projekt anfragen</h2>
             <p>
-              Zur Startseite zurück und dein Vorhaben unverbindlich übermitteln.
+              Zurück zur Startseite und dein Vorhaben unverbindlich über das Formular absenden.
             </p>
           </div>
           <a class="btn" href="index.html#anfrage">Zur Anfrage</a>
