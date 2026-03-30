@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projekte – Meisterservice</title>
+  <title>Feedback – Meisterservice</title>
   <meta
     name="description"
-    content="Beispielprojekte und Referenzen rund um Holzbau, Carports, Überdachungen und Holzarbeiten im Kreis Calw."
+    content="Feedback und Rückmeldungen zu Anfrage, Ablauf und regionaler Vermittlung über Meisterservice."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -224,14 +224,14 @@
       gap: 24px;
     }
 
-    .project-card {
+    .feedback-card {
       position: relative;
       overflow: hidden;
       padding: 28px;
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
-    .project-card::before {
+    .feedback-card::before {
       content: "";
       position: absolute;
       top: 0;
@@ -241,58 +241,30 @@
       background: linear-gradient(90deg, rgba(132, 90, 53, 0.95), rgba(132, 90, 53, 0.16));
     }
 
-    .project-card:hover {
+    .feedback-card:hover {
       transform: translateY(-5px);
       box-shadow: var(--shadow-hover);
       border-color: rgba(132, 90, 53, 0.14);
     }
 
-    .image-placeholder {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      border-radius: 18px;
-      border: 1px solid rgba(132, 90, 53, 0.10);
-      background: linear-gradient(135deg, #f8f2ea, #efe3d6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--accent-dark);
-      font-weight: 700;
-      margin-bottom: 18px;
-      padding: 18px;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .project-card h3 {
+    .feedback-card h3 {
       margin: 0 0 12px;
       font-size: 1.14rem;
       line-height: 1.35;
       letter-spacing: -0.02em;
     }
 
-    .project-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.78;
+    .feedback-quote {
+      margin: 0 0 18px;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .feedback-author {
+      color: var(--accent-dark);
+      font-size: 0.93rem;
+      font-weight: 700;
     }
 
     .cta {
@@ -372,7 +344,7 @@
       .brand-mark { width: 165px; }
       .brand-slogan { font-size: 0.95rem; max-width: 300px; }
       .hero-box,
-      .project-card,
+      .feedback-card,
       .cta { padding: 24px; }
       h1 { font-size: clamp(2.1rem, 12vw, 3.4rem); }
     }
@@ -390,8 +362,8 @@
         <nav class="top-links" aria-label="Bereiche">
           <a href="index.html#leistungen">Leistungen</a>
           <a href="partner.html">Partner</a>
-          <a href="projekte.html" class="active">Projekte</a>
-          <a href="feedback.html">Feedback</a>
+          <a href="projekte.html">Projekte</a>
+          <a href="feedback.html" class="active">Feedback</a>
         </nav>
         <a href="index.html#anfrage" class="btn">Jetzt anfragen</a>
       </div>
@@ -402,11 +374,10 @@
     <section class="page-hero">
       <div class="container">
         <div class="card hero-box">
-          <div class="eyebrow">Projekte</div>
-          <h1>Beispielprojekte im Holzbau</h1>
+          <div class="eyebrow">Feedback</div>
+          <h1>Rückmeldungen zur Anfrage und Vermittlung</h1>
           <p class="lead">
-            Auf dieser Seite kannst du Referenzbilder, Projektarten und kurze Beschreibungen zeigen.
-            Das wirkt deutlich stärker als alles nur auf der Startseite untereinander zu setzen.
+            Eine eigene Feedback-Seite schafft Vertrauen und wirkt deutlich sauberer, als alle Stimmen mit auf die Startseite zu packen.
           </p>
         </div>
       </div>
@@ -415,84 +386,60 @@
     <section>
       <div class="container">
         <div class="section-head">
-          <span class="section-kicker">Referenzen</span>
-          <h2>Beispiele aus typischen Holzprojekten</h2>
+          <span class="section-kicker">Stimmen</span>
+          <h2>Beispielhafte Rückmeldungen</h2>
           <p>
-            Die Platzhalter kannst du später einfach gegen echte Fotos und kurze Projektinfos austauschen.
+            Ersetze diese Platzhalter später durch echte, kurze Kundenstimmen oder Rückmeldungen von Partnerbetrieben.
           </p>
         </div>
 
         <div class="grid-3">
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Carport</div>
-            <div class="tag-row">
-              <span class="tag">Carport</span>
-              <span class="tag">Außenbereich</span>
-            </div>
-            <h3>Carport mit Seitenverkleidung</h3>
-            <p>
-              Beispiel für eine moderne und funktionale Holzlösung im Hof- oder Eingangsbereich.
+          <div class="card feedback-card">
+            <h3>Schnell und übersichtlich</h3>
+            <p class="feedback-quote">
+              „Die Anfrage war in wenigen Minuten gestellt und alle wichtigen Angaben waren direkt sauber erfasst.“
             </p>
+            <div class="feedback-author">Beispielkunde aus Calw</div>
           </div>
 
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Überdachung</div>
-            <div class="tag-row">
-              <span class="tag">Terrasse</span>
-              <span class="tag">Überdachung</span>
-            </div>
-            <h3>Terrassenüberdachung aus Holz</h3>
-            <p>
-              Referenz für wettergeschützte Außenbereiche mit schlichter, hochwertiger Optik.
+          <div class="card feedback-card">
+            <h3>Angenehmer Ablauf</h3>
+            <p class="feedback-quote">
+              „Gerade weil man nicht selbst viele Betriebe zusammensuchen muss, war der Ablauf deutlich einfacher.“
             </p>
+            <div class="feedback-author">Beispielkunde aus Nagold</div>
           </div>
 
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Sichtschutz</div>
-            <div class="tag-row">
-              <span class="tag">Garten</span>
-              <span class="tag">Sichtschutz</span>
-            </div>
-            <h3>Sichtschutz & Gartenelemente</h3>
-            <p>
-              Typische Projekte für Garten, Grundstücksgrenzen und funktionale Holzgestaltung im Außenraum.
+          <div class="card feedback-card">
+            <h3>Regional passend</h3>
+            <p class="feedback-quote">
+              „Für unser Holzprojekt war der regionale Fokus hilfreich, weil direkt passende Ansprechpartner im Blick waren.“
             </p>
+            <div class="feedback-author">Beispielkunde aus Bad Wildbad</div>
           </div>
 
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Holzfassade</div>
-            <div class="tag-row">
-              <span class="tag">Fassade</span>
-              <span class="tag">Holzbau</span>
-            </div>
-            <h3>Moderne Holzfassade</h3>
-            <p>
-              Beispiel für saubere Fassadenarbeiten mit klarer Optik und regionalem Bezug.
+          <div class="card feedback-card">
+            <h3>Klare Struktur</h3>
+            <p class="feedback-quote">
+              „Die Anfrage war verständlich aufgebaut und das Vorhaben ließ sich ohne Aufwand beschreiben.“
             </p>
+            <div class="feedback-author">Beispielkunde aus Neubulach</div>
           </div>
 
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Gartenhaus</div>
-            <div class="tag-row">
-              <span class="tag">Gartenhaus</span>
-              <span class="tag">Holz</span>
-            </div>
-            <h3>Gartenhaus mit Stauraum</h3>
-            <p>
-              Kompakte Holzlösung für Garten und Grundstück mit praktischem Zusatznutzen.
+          <div class="card feedback-card">
+            <h3>Vertrauenswürdig</h3>
+            <p class="feedback-quote">
+              „Die regionale Ausrichtung und die klare Darstellung haben direkt einen seriösen Eindruck gemacht.“
             </p>
+            <div class="feedback-author">Beispielkunde aus Calw</div>
           </div>
 
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Balkon oder Treppe</div>
-            <div class="tag-row">
-              <span class="tag">Balkon</span>
-              <span class="tag">Ausbau</span>
-            </div>
-            <h3>Balkon oder Holztreppe</h3>
-            <p>
-              Beispiel für individuelle Ausbauarbeiten mit sauberer handwerklicher Umsetzung.
+          <div class="card feedback-card">
+            <h3>Gute Vorbereitung</h3>
+            <p class="feedback-quote">
+              „Man merkt, dass die Anfrage nicht einfach nur weitergeleitet wird, sondern vorher sauber aufgenommen wird.“
             </p>
+            <div class="feedback-author">Beispielkunde aus Bad Teinach</div>
           </div>
         </div>
       </div>
@@ -502,9 +449,9 @@
       <div class="container">
         <div class="card cta">
           <div>
-            <h2>Eigenes Projekt anfragen</h2>
+            <h2>Jetzt eigenes Projekt anfragen</h2>
             <p>
-              Zur Startseite zurück und dein Vorhaben unverbindlich über das Formular anfragen.
+              Zur Startseite zurück und dein Vorhaben unverbindlich übermitteln.
             </p>
           </div>
           <a class="btn" href="index.html#anfrage">Zur Anfrage</a>
@@ -523,7 +470,7 @@
       <div class="footer-links">
         <a href="index.html">Startseite</a>
         <a href="partner.html">Partner</a>
-        <a href="feedback.html">Feedback</a>
+        <a href="projekte.html">Projekte</a>
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
       </div>
