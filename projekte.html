@@ -33,6 +33,7 @@
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -247,20 +248,13 @@
       border-color: rgba(132, 90, 53, 0.14);
     }
 
-    .image-placeholder {
+    .project-image {
       width: 100%;
       aspect-ratio: 16 / 10;
+      object-fit: cover;
       border-radius: 18px;
       border: 1px solid rgba(132, 90, 53, 0.10);
-      background: linear-gradient(135deg, #f8f2ea, #efe3d6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: var(--accent-dark);
-      font-weight: 700;
       margin-bottom: 18px;
-      padding: 18px;
     }
 
     .tag-row {
@@ -293,6 +287,13 @@
       color: var(--muted);
       font-size: 0.98rem;
       line-height: 1.78;
+    }
+
+    .project-note {
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.7;
     }
 
     .cta {
@@ -403,10 +404,10 @@
       <div class="container">
         <div class="card hero-box">
           <div class="eyebrow">Projekte</div>
-          <h1>Beispielprojekte im Holzbau</h1>
+          <h1>Beispielbilder für typische Holzprojekte</h1>
           <p class="lead">
-            Auf dieser Seite kannst du Referenzbilder, Projektarten und kurze Beschreibungen zeigen.
-            Das wirkt deutlich stärker als alles nur auf der Startseite untereinander zu setzen.
+            Hier kannst du Referenzbilder und Projektarten zeigen. Für den Start sind bereits drei echte
+            Projektbilder eingebunden, damit die Seite direkter Vertrauen aufbaut.
           </p>
         </div>
       </div>
@@ -418,82 +419,64 @@
           <span class="section-kicker">Referenzen</span>
           <h2>Beispiele aus typischen Holzprojekten</h2>
           <p>
-            Die Platzhalter kannst du später einfach gegen echte Fotos und kurze Projektinfos austauschen.
+            Die Bilder können später jederzeit durch echte eigene Projektfotos ersetzt werden. Eigene Bilder
+            wirken langfristig noch stärker als Stockfotos.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="card project-card">
-            <div class="image-placeholder">Projektbild Carport</div>
-            <div class="tag-row">
-              <span class="tag">Carport</span>
-              <span class="tag">Außenbereich</span>
-            </div>
-            <h3>Carport mit Seitenverkleidung</h3>
-            <p>
-              Beispiel für eine moderne und funktionale Holzlösung im Hof- oder Eingangsbereich.
-            </p>
-          </div>
-
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Überdachung</div>
+            <img
+              class="project-image"
+              src="https://images.pexels.com/photos/35651529/pexels-photo-35651529.jpeg?cs=srgb&dl=pexels-alex-la-tierra-183845267-35651529.jpg&fm=jpg"
+              alt="Terrasse mit Holz-Pergola als Beispiel für Überdachung im Außenbereich"
+            />
             <div class="tag-row">
               <span class="tag">Terrasse</span>
               <span class="tag">Überdachung</span>
             </div>
-            <h3>Terrassenüberdachung aus Holz</h3>
+            <h3>Terrassenbereich mit Holz-Pergola</h3>
             <p>
-              Referenz für wettergeschützte Außenbereiche mit schlichter, hochwertiger Optik.
+              Beispiel für eine schlichte Außenlösung mit warmer Holzoptik und klarer Gestaltung.
             </p>
           </div>
 
           <div class="card project-card">
-            <div class="image-placeholder">Projektbild Sichtschutz</div>
+            <img
+              class="project-image"
+              src="https://images.pexels.com/photos/17502001/pexels-photo-17502001.jpeg?cs=srgb&dl=pexels-robertkso-17502001.jpg&fm=jpg"
+              alt="Holzhaus mit großer Terrasse als Beispiel für Holzbau und Außenkonstruktionen"
+            />
             <div class="tag-row">
-              <span class="tag">Garten</span>
-              <span class="tag">Sichtschutz</span>
+              <span class="tag">Holzbau</span>
+              <span class="tag">Außenbereich</span>
             </div>
-            <h3>Sichtschutz & Gartenelemente</h3>
+            <h3>Holzbau mit großer Terrasse</h3>
             <p>
-              Typische Projekte für Garten, Grundstücksgrenzen und funktionale Holzgestaltung im Außenraum.
+              Starkes Beispiel für hochwertige Holzkonstruktionen mit Fokus auf Außenbereich und Gesamtwirkung.
             </p>
           </div>
 
           <div class="card project-card">
-            <div class="image-placeholder">Projektbild Holzfassade</div>
+            <img
+              class="project-image"
+              src="https://images.pexels.com/photos/22043448/pexels-photo-22043448.jpeg?cs=srgb&dl=pexels-alexander-mass-748453803-22043448.jpg&fm=jpg"
+              alt="Holzfassade und Balkon als Beispiel für Fassaden- und Ausbauarbeiten"
+            />
             <div class="tag-row">
               <span class="tag">Fassade</span>
-              <span class="tag">Holzbau</span>
-            </div>
-            <h3>Moderne Holzfassade</h3>
-            <p>
-              Beispiel für saubere Fassadenarbeiten mit klarer Optik und regionalem Bezug.
-            </p>
-          </div>
-
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Gartenhaus</div>
-            <div class="tag-row">
-              <span class="tag">Gartenhaus</span>
-              <span class="tag">Holz</span>
-            </div>
-            <h3>Gartenhaus mit Stauraum</h3>
-            <p>
-              Kompakte Holzlösung für Garten und Grundstück mit praktischem Zusatznutzen.
-            </p>
-          </div>
-
-          <div class="card project-card">
-            <div class="image-placeholder">Projektbild Balkon oder Treppe</div>
-            <div class="tag-row">
               <span class="tag">Balkon</span>
-              <span class="tag">Ausbau</span>
             </div>
-            <h3>Balkon oder Holztreppe</h3>
+            <h3>Holzfassade mit Balkonlösung</h3>
             <p>
-              Beispiel für individuelle Ausbauarbeiten mit sauberer handwerklicher Umsetzung.
+              Beispiel für Fassadenwirkung, Balkonelemente und handwerklich saubere Gestaltung in Holz.
             </p>
           </div>
+        </div>
+
+        <div class="project-note">
+          Hinweis: Für maximale Glaubwürdigkeit solltest du diese Bilder später durch echte eigene Projekte aus
+          dem Kreis Calw ersetzen.
         </div>
       </div>
     </section>
