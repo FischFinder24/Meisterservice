@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meisterservice – Holzbau im Kreis Calw</title>
+  <title>Meisterservice – Holzprojekte im Kreis Calw anfragen</title>
   <meta
     name="description"
-    content="Meisterservice vermittelt Anfragen für Holzbau und Holzarbeiten rund ums Haus im Kreis Calw – regional, unverbindlich und einfach online anfragen."
+    content="Meisterservice ist die zentrale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw – von kleineren Arbeiten bis zu größeren Vorhaben."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -142,7 +142,7 @@
       line-height: 1.3;
       letter-spacing: -0.01em;
       color: var(--muted);
-      max-width: 460px;
+      max-width: 520px;
     }
 
     .nav-actions {
@@ -184,7 +184,7 @@
     }
 
     .hero-copy {
-      max-width: 700px;
+      max-width: 720px;
       padding-top: 72px;
     }
 
@@ -206,12 +206,12 @@
       font-size: clamp(2.7rem, 5vw, 5.2rem);
       line-height: 0.96;
       letter-spacing: -0.05em;
-      max-width: 760px;
+      max-width: 780px;
     }
 
     .lead {
       margin: 0;
-      max-width: 620px;
+      max-width: 660px;
       font-size: 1.08rem;
       color: var(--muted);
       line-height: 1.9;
@@ -348,7 +348,7 @@
 
     .section-head p {
       margin: 0;
-      max-width: 760px;
+      max-width: 780px;
       color: var(--muted);
       line-height: 1.8;
     }
@@ -467,7 +467,7 @@
       margin: 0;
       color: var(--muted);
       line-height: 1.8;
-      max-width: 620px;
+      max-width: 650px;
     }
 
     .cta-meta {
@@ -563,7 +563,7 @@
 
       .brand-slogan {
         font-size: 0.95rem;
-        max-width: 300px;
+        max-width: 320px;
       }
 
       .hero {
@@ -603,7 +603,7 @@
     <div class="container nav">
       <a class="brand" href="index.html" aria-label="Zur Startseite">
         <img class="brand-mark" src="logo.png" alt="Meisterservice Logo" />
-        <div class="brand-slogan">Holzbau rund ums Haus im Kreis Calw</div>
+        <div class="brand-slogan">Du schilderst dein Vorhaben – Meisterservice kümmert sich um die passende regionale Weitergabe.</div>
       </a>
 
       <div class="nav-actions">
@@ -622,13 +622,13 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Regional vermittelt im Kreis Calw</div>
+          <div class="eyebrow">Kleine Arbeiten bis größere Vorhaben im Kreis Calw</div>
 
-          <h1>Holzprojekte im Kreis Calw strukturiert anfragen</h1>
+          <h1>Holzprojekte im Kreis Calw einfach anfragen</h1>
 
           <p class="lead">
-            Meisterservice erfasst dein Vorhaben klar und unverbindlich und bereitet die Anfrage so auf,
-            dass sie an passende regionale Handwerksbetriebe weitergegeben werden kann – ohne langes Suchen.
+            Ob kleine Arbeit, individuelle Holzlösung oder größeres Vorhaben: Du schilderst dein Projekt einmal zentral,
+            Meisterservice prüft die Anfrage und sucht den passenden regionalen Handwerksbetrieb für die Umsetzung.
           </p>
 
           <div class="hero-actions">
@@ -640,8 +640,8 @@
           <div class="card form-card" id="anfrage">
             <h3>Unverbindlich anfragen</h3>
             <p>
-              Beschreibe dein Vorhaben in wenigen Angaben. Die Anfrage wird strukturiert erfasst und
-              für die passende regionale Weitergabe vorbereitet.
+              Beschreibe kurz, was du brauchst oder planst. Meisterservice sichtet deine Anfrage,
+              ordnet das Vorhaben ein und kümmert sich um die passende regionale Weitergabe.
             </p>
 
             <div id="form-message" class="form-message" aria-live="polite"></div>
@@ -653,17 +653,19 @@
               <input type="text" name="location" placeholder="Ort / PLZ im Kreis Calw" autocomplete="address-level2" required />
 
               <select name="service" required>
-                <option value="">Leistung auswählen</option>
-                <option>Carport</option>
-                <option>Terrassenüberdachung</option>
+                <option value="">Worum geht es?</option>
+                <option>Kleinere Reparatur / Anpassung</option>
+                <option>Sichtschutz / Zaun / Gartenprojekt</option>
+                <option>Gartenhaus / Pergola / Holzlösung im Garten</option>
+                <option>Carport / Überdachung</option>
+                <option>Balkon / Treppe / Ausbau</option>
+                <option>Holzfassade / Verkleidung</option>
                 <option>Zimmerei / Holzbau</option>
-                <option>Gartenhaus / Sichtschutz</option>
-                <option>Holzfassade</option>
-                <option>Balkon / Holztreppe</option>
-                <option>Sonstiges Holzprojekt</option>
+                <option>Individuelles Holzprojekt</option>
+                <option>Noch unsicher / Beratung gewünscht</option>
               </select>
 
-              <textarea name="project" placeholder="Kurzbeschreibung des Projekts" required></textarea>
+              <textarea name="project" placeholder="Kurzbeschreibung des Vorhabens" required></textarea>
 
               <input type="hidden" name="_subject" value="Neue Anfrage über Meisterservice" />
 
@@ -682,27 +684,14 @@
       <div class="container">
         <div class="section-head">
           <span class="section-kicker">Leistungen</span>
-          <h2>Typische Holzprojekte rund ums Haus</h2>
+          <h2>Für kleine Arbeiten bis größere Holzbau-Projekte</h2>
           <p>
-            Typische Leistungen, für die eine strukturierte Anfrage an passende regionale Betriebe im Kreis Calw sinnvoll ist.
+            Angefragt werden können sowohl kleinere Holzarbeiten rund ums Haus als auch umfangreichere Projekte
+            im Außenbereich oder Ausbau – zentral über eine einzige Anfrage.
           </p>
         </div>
 
         <div class="grid-3">
-          <div class="card service">
-            <div class="icon-circle">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 21h18"></path>
-                <path d="M5 21V8l7-5 7 5v13"></path>
-                <path d="M9 21v-5h6v5"></path>
-              </svg>
-            </div>
-            <h3>Carports & Überdachungen</h3>
-            <p>
-              Carports, Terrassenüberdachungen, Pergolen und weitere Außenlösungen aus Holz.
-            </p>
-          </div>
-
           <div class="card service">
             <div class="icon-circle">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -711,9 +700,23 @@
                 <path d="M12 9l3 3"></path>
               </svg>
             </div>
-            <h3>Zimmerei & Holzbau</h3>
+            <h3>Kleinere Arbeiten & Anpassungen</h3>
             <p>
-              Klassische Zimmereiarbeiten und individuelle Holzbauprojekte rund ums Haus.
+              Zum Beispiel Reparaturen, kleinere Holzarbeiten, Anpassungen oder praktische Lösungen rund ums Haus und Grundstück.
+            </p>
+          </div>
+
+          <div class="card service">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 21h18"></path>
+                <path d="M5 21V8l7-5 7 5v13"></path>
+                <path d="M9 21v-5h6v5"></path>
+              </svg>
+            </div>
+            <h3>Außenbereich, Garten & Überdachungen</h3>
+            <p>
+              Sichtschutz, Zäune, Gartenhäuser, Pergolen, Carports, Terrassenüberdachungen und weitere Holzlösungen im Außenbereich.
             </p>
           </div>
 
@@ -728,9 +731,9 @@
                 <path d="M13 14h2"></path>
               </svg>
             </div>
-            <h3>Fassade, Garten & Ausbau</h3>
+            <h3>Größere Holzbau-Vorhaben</h3>
             <p>
-              Sichtschutz, Gartenhäuser, Holzfassaden, Balkone, Treppen und weitere Holzarbeiten im Außenbereich.
+              Balkone, Treppen, Holzfassaden, Ausbauarbeiten und individuelle Projekte, für die ein passender regionaler Betrieb gesucht wird.
             </p>
           </div>
         </div>
@@ -741,9 +744,10 @@
       <div class="container">
         <div class="section-head">
           <span class="section-kicker">Vorteile</span>
-          <h2>Klarere Anfrage, weniger Suchaufwand</h2>
+          <h2>Eine Anfrage statt langer Suche nach dem passenden Betrieb</h2>
           <p>
-            Weniger Aufwand, strukturierte Angaben und Fokus auf passende Handwerksbetriebe aus der Region.
+            Meisterservice nimmt dein Vorhaben zentral auf, prüft die Anfrage und kümmert sich darum,
+            den passenden regionalen Handwerksbetrieb für die Umsetzung zu finden.
           </p>
         </div>
 
@@ -757,7 +761,7 @@
             </div>
             <h3>Regional passend</h3>
             <p>
-              Fokus auf passende Handwerksbetriebe aus dem Kreis Calw und der näheren Umgebung.
+              Fokus auf passende Handwerksbetriebe aus dem Kreis Calw und der näheren Umgebung – je nach Vorhaben und Aufwand.
             </p>
           </div>
 
@@ -770,9 +774,9 @@
                 <path d="M9 16h4"></path>
               </svg>
             </div>
-            <h3>Sauber erfasst</h3>
+            <h3>Sauber geprüft</h3>
             <p>
-              Die wichtigsten Projektdaten werden klar und strukturiert aufgenommen.
+              Die Anfrage wird gesichtet und verständlich eingeordnet, damit das Vorhaben direkt klarer und strukturierter vorliegt.
             </p>
           </div>
 
@@ -785,9 +789,9 @@
                 <path d="M12 18h8"></path>
               </svg>
             </div>
-            <h3>Weniger Suchaufwand</h3>
+            <h3>Weniger Aufwand</h3>
             <p>
-              Eine strukturierte Anfrage statt vieler einzelner Anfragen bei unterschiedlichen Betrieben.
+              Du musst nicht selbst viele Betriebe durchtelefonieren, sondern stellst dein Vorhaben einmal zentral über Meisterservice.
             </p>
           </div>
         </div>
@@ -800,16 +804,16 @@
           <span class="section-kicker">Ablauf</span>
           <h2>So läuft die Anfrage ab</h2>
           <p>
-            Vom ersten Formular bis zur möglichen Weitergabe an einen regional passenden Handwerksbetrieb.
+            Vom ersten Formular bis zur Prüfung und möglichen Weitergabe an einen passenden regionalen Betrieb.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="card step">
             <div class="step-number">1</div>
-            <h3>Anfrage stellen</h3>
+            <h3>Anfrage senden</h3>
             <p>
-              Du beschreibst dein Holzprojekt, den Ort und die gewünschte Leistung in wenigen Minuten online.
+              Du beschreibst kurz, was du brauchst oder planst – egal ob kleine Arbeit oder größeres Holzbau-Vorhaben.
             </p>
           </div>
 
@@ -817,15 +821,15 @@
             <div class="step-number">2</div>
             <h3>Anfrage wird geprüft</h3>
             <p>
-              Die wichtigsten Angaben werden gesichtet und strukturiert so aufbereitet, dass sie direkt verständlich vorliegen.
+              Meisterservice sichtet dein Vorhaben, ordnet die Anfrage passend ein und bereitet sie verständlich auf.
             </p>
           </div>
 
           <div class="card step">
             <div class="step-number">3</div>
-            <h3>Passend weitergeben</h3>
+            <h3>Passenden Betrieb finden</h3>
             <p>
-              Anschließend kann die Anfrage an einen regional passenden Handwerksbetrieb weitergegeben werden.
+              Anschließend wird geschaut, welches regionale Unternehmen für die Umsetzung der Anfrage am besten geeignet ist.
             </p>
           </div>
         </div>
@@ -839,9 +843,10 @@
             <span class="section-kicker">Jetzt starten</span>
             <h2>Holzprojekt im Kreis Calw geplant?</h2>
             <p>
-              Jetzt unverbindlich anfragen und das Vorhaben strukturiert übermitteln – mit Fokus auf passende regionale Betriebe.
+              Du schilderst dein Vorhaben – Meisterservice kümmert sich um die passende regionale Weitergabe
+              an einen geeigneten Handwerksbetrieb.
             </p>
-            <div class="cta-meta">Regionaler Fokus · Klar erfasst · Ohne langes Suchen</div>
+            <div class="cta-meta">Eine Anfrage · Regional geprüft · Passend weitergegeben</div>
           </div>
 
           <a class="btn" href="#anfrage">Jetzt Anfrage starten</a>
@@ -854,7 +859,7 @@
     <div class="container footer-wrap">
       <div>
         <strong>Meisterservice</strong><br />
-        Holzbau rund ums Haus im Kreis Calw
+        Zentrale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw
       </div>
 
       <div class="footer-links">
