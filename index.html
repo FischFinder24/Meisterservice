@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meisterservice – Holzprojekte im Kreis Calw anfragen</title>
   <meta
-    name="description":contentReference[oaicite:0]{index=0}ale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw – von kleineren Arbeiten bis zu größeren Vorhaben."
+    name="description"
+    content="Meisterservice ist die zentrale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw – von kleineren Arbeiten bis zu größeren Vorhaben."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -264,9 +265,16 @@
 
     input,
     select,
+    textarea,
+    button {
+      font-size: 16px;
+    }
+
+    input,
+    select,
     textarea {
       width: 100%;
-      font: inherit;
+      font-family: inherit;
       color: var(--text);
       background: #fff;
       border: 1px solid #d9cdbf;
@@ -274,6 +282,8 @@
       padding: 15px 16px;
       outline: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      -webkit-appearance: none;
+      appearance: none;
     }
 
     input::placeholder,
@@ -288,14 +298,30 @@
       box-shadow: 0 0 0 4px rgba(132, 90, 53, 0.10);
     }
 
+    select {
+      background-image:
+        linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+        linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+      background-position:
+        calc(100% - 22px) calc(50% - 3px),
+        calc(100% - 16px) calc(50% - 3px);
+      background-size: 6px 6px, 6px 6px;
+      background-repeat: no-repeat;
+      padding-right: 42px;
+    }
+
     input[type="file"] {
       padding: 14px 16px;
       background: #fff;
       cursor: pointer;
+      -webkit-appearance: auto;
+      appearance: auto;
     }
 
     input[type="date"] {
       min-height: 54px;
+      -webkit-appearance: auto;
+      appearance: auto;
     }
 
     textarea {
@@ -319,6 +345,8 @@
       margin: 2px 0 0;
       flex: 0 0 auto;
       accent-color: var(--accent);
+      -webkit-appearance: auto;
+      appearance: auto;
     }
 
     .checkbox-row label {
@@ -572,12 +600,33 @@
       }
 
       .hero {
-        padding-top: 48px;
+        padding: 36px 0 24px;
       }
 
       .hero-copy {
         max-width: 100%;
-        padding-top: 34px;
+        padding-top: 8px;
+      }
+
+      h1 {
+        font-size: clamp(2.1rem, 9vw, 3.2rem);
+        line-height: 1.02;
+      }
+
+      .lead {
+        font-size: 1rem;
+        line-height: 1.75;
+      }
+
+      .form-card {
+        padding: 24px;
+      }
+
+      .service,
+      .info-card,
+      .step,
+      .cta {
+        min-height: unset;
       }
 
       .cta {
@@ -586,38 +635,62 @@
     }
 
     @media (max-width: 720px) {
+      .container {
+        width: min(100% - 20px, var(--max));
+      }
+
       .nav {
-        gap: 14px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 14px 0 16px;
+      }
+
+      .brand,
+      .nav-actions {
+        grid-column: 1;
+      }
+
+      .brand-mark {
+        width: 150px;
+      }
+
+      .brand-slogan {
+        font-size: 0.92rem;
+        max-width: 300px;
       }
 
       .nav-actions {
         width: 100%;
+        justify-self: center;
+        flex-direction: column;
+        gap: 12px;
       }
 
       .top-links {
         justify-content: center;
-        gap: 10px 14px;
+        gap: 10px 12px;
+      }
+
+      .top-links a {
+        font-size: 0.92rem;
       }
 
       .nav-actions .btn {
         width: 100%;
       }
 
-      .brand-mark {
-        width: 165px;
-      }
-
-      .brand-slogan {
-        font-size: 0.95rem;
-        max-width: 320px;
-      }
-
       .hero {
-        padding-top: 38px;
+        padding: 28px 0 18px;
       }
 
       .hero-copy {
-        padding-top: 24px;
+        padding-top: 0;
+      }
+
+      .eyebrow {
+        font-size: 0.88rem;
+        padding: 9px 14px;
+        margin-bottom: 18px;
       }
 
       h1 {
@@ -627,11 +700,15 @@
       .hero-actions {
         flex-direction: column;
         width: 100%;
-        margin-top: 28px;
+        margin-top: 22px;
       }
 
       .hero-actions .btn {
         width: 100%;
+      }
+
+      .form-card h3 {
+        font-size: 1.35rem;
       }
 
       .form-card,
@@ -639,7 +716,39 @@
       .info-card,
       .step,
       .cta {
-        padding: 24px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 14px 14px;
+        border-radius: 16px;
+      }
+
+      input[type="file"],
+      input[type="date"] {
+        min-height: 52px;
+      }
+
+      .checkbox-row {
+        padding: 14px;
+        border-radius: 16px;
+      }
+
+      .checkbox-row label {
+        font-size: 0.93rem;
+        line-height: 1.5;
+      }
+
+      .footer-wrap {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .footer-links {
+        gap: 12px;
       }
     }
   </style>
