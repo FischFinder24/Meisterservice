@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meisterservice – Holzprojekte im Kreis Calw anfragen</title>
   <meta
-    name="description"
-    content="Meisterservice ist die zentrale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw – von kleineren Arbeiten bis zu größeren Vorhaben."
+    name="description":contentReference[oaicite:0]{index=0}ale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw – von kleineren Arbeiten bis zu größeren Vorhaben."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -252,6 +251,17 @@
       gap: 14px;
     }
 
+    .field-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
     input,
     select,
     textarea {
@@ -278,9 +288,45 @@
       box-shadow: 0 0 0 4px rgba(132, 90, 53, 0.10);
     }
 
+    input[type="file"] {
+      padding: 14px 16px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    input[type="date"] {
+      min-height: 54px;
+    }
+
     textarea {
       min-height: 136px;
       resize: vertical;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid #d9cdbf;
+      border-radius: 18px;
+      background: #fff;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin: 2px 0 0;
+      flex: 0 0 auto;
+      accent-color: var(--accent);
+    }
+
+    .checkbox-row label {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+      cursor: pointer;
     }
 
     .form-card button.btn {
@@ -612,6 +658,8 @@
           <a href="partner.html">Partner</a>
           <a href="projekte.html">Projekte</a>
           <a href="feedback.html">Feedback</a>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
         </nav>
         <a href="#anfrage" class="btn">Jetzt anfragen</a>
       </div>
@@ -646,7 +694,12 @@
 
             <div id="form-message" class="form-message" aria-live="polite"></div>
 
-            <form id="anfrage-form" action="https://formspree.io/f/meerkaoq" method="post">
+            <form
+              id="anfrage-form"
+              action="https://formspree.io/f/meerkaoq"
+              method="post"
+              enctype="multipart/form-data"
+            >
               <input type="text" name="name" placeholder="Name" autocomplete="name" required />
               <input type="text" name="phone" placeholder="Telefonnummer" autocomplete="tel" required />
               <input type="email" name="email" placeholder="E-Mail-Adresse" autocomplete="email" required />
@@ -664,6 +717,30 @@
                 <option>Individuelles Holzprojekt</option>
                 <option>Noch unsicher / Beratung gewünscht</option>
               </select>
+
+              <div class="field-group">
+                <label class="field-label" for="desired_date">Wunschtermin</label>
+                <input type="date" id="desired_date" name="desired_date" />
+                <div class="small">Optional: Wenn du schon einen bevorzugten Termin oder Zeitraum im Kopf hast.</div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="attachment">Foto / Datei hochladen</label>
+                <input
+                  type="file"
+                  id="attachment"
+                  name="attachment"
+                  accept="image/png,image/jpeg,image/webp,application/pdf"
+                />
+                <div class="small">
+                  Optional: Zum Beispiel Foto vom Vorhaben oder eine Skizze / PDF.
+                </div>
+              </div>
+
+              <div class="checkbox-row">
+                <input type="checkbox" id="callback_requested" name="callback_requested" value="Ja" />
+                <label for="callback_requested">Rückruf gewünscht – nutze dafür bitte die angegebene Telefonnummer.</label>
+              </div>
 
               <textarea name="project" placeholder="Kurzbeschreibung des Vorhabens" required></textarea>
 
@@ -856,26 +933,28 @@
   </main>
 
   <footer>
-  <div class="container footer-wrap">
-    <div>
-      <strong>Meisterservice</strong><br />
-      Zentrale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw
-    </div>
+    <div class="container footer-wrap">
+      <div>
+        <strong>Meisterservice</strong><br />
+        Zentrale Anfrage- und Vermittlungsseite für Holzprojekte im Kreis Calw
+      </div>
 
-    <div class="footer-links">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="partner.html">Partner</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="feedback.html">Feedback</a>
+      <div class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="partner.html">Partner</a>
+        <a href="projekte.html">Projekte</a>
+        <a href="feedback.html">Feedback</a>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <script>
     const form = document.getElementById("anfrage-form");
     const messageBox = document.getElementById("form-message");
     const submitBtn = document.getElementById("submit-btn");
+    const fileInput = document.getElementById("attachment");
+    const MAX_FILE_SIZE = 25 * 1024 * 1024;
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
@@ -884,6 +963,12 @@
       messageBox.textContent = "";
 
       if (!form.reportValidity()) {
+        return;
+      }
+
+      if (fileInput.files.length > 0 && fileInput.files[0].size > MAX_FILE_SIZE) {
+        messageBox.textContent = "Die Datei ist zu groß. Bitte wähle eine Datei mit maximal 25 MB.";
+        messageBox.style.display = "block";
         return;
       }
 
